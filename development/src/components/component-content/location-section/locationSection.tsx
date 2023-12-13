@@ -52,6 +52,10 @@ const LocationSection = () => {
 							leaveFrom='opacity-100'
 							leaveTo='opacity-0'
 						>
+							<Heading className='text-lg'>
+								<strong>Санкт-Петербург</strong> <br />
+								гостиница «Спутник» пр. Тореза, 36,
+							</Heading>
 							<CustomMap />
 						</Transition>
 					</Tab.Panel>

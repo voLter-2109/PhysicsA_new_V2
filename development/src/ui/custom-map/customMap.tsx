@@ -13,8 +13,8 @@ const CustomMap = () => {
 		const myMap = new ymaps.Map(mapRef.current, {
 			center: [60.006395, 30.365195],
 			zoom: 14,
-			// controls: ['fullscreenControl', 'zoomControl']
-			controls: ['fullscreenControl']
+			controls: ['fullscreenControl', 'zoomControl']
+			// controls: ['fullscreenControl']
 		})
 
 		myMap.geoObjects.add(
