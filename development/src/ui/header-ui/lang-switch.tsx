@@ -1,17 +1,29 @@
+'use client'
+
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-import { FC, Fragment, useState } from 'react'
-import { TLangSwitch } from '../../type/nav-bar-type'
+import { usePathname, useRouter } from 'next/navigation'
+import { Fragment, useState } from 'react'
+import { localeConst } from '../../constants/app.constant'
 
-const LangSwitch: FC<{ langSwitch: TLangSwitch[] }> = ({ langSwitch }) => {
-	const [selected, setSelected] = useState(langSwitch[0])
+const LangSwitch = () => {
+	const pathName = usePathname()
+	const router = useRouter()
+	const [selected, setSelected] = useState(pathName?.split('/')[1])
+
+	const redirectedPathName = (locale: string) => {
+		if (!pathName) return '/'
+		const segments = pathName.split('/')
+		segments[1] = locale
+		return router.replace(segments.join('/'))
+	}
 
 	return (
 		<Listbox value={selected} onChange={setSelected}>
 			<div className='relative'>
 				<Listbox.Button className='cursor-pointer rounded-lg dark:bg-bd-dark bg-bg-light pl-3 pr-9'>
 					<span className='block dark:text-bg-dark-bu text-colors-light-dark'>
-						{selected.lang}
+						{selected}
 					</span>
 					<span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
 						<ChevronUpDownIcon
@@ -31,10 +43,10 @@ const LangSwitch: FC<{ langSwitch: TLangSwitch[] }> = ({ langSwitch }) => {
 					rounded-md bg-bg-light-bu dark:bg-bd-dark dark:ring-colors-dakr-light dark:ring-1 py-1 text-base  border-none 
 					focus:outline-none sm:text-sm '
 					>
-						{langSwitch.map((lang: TLangSwitch, langIdx: number) => (
+						{localeConst.map((lang, i) => (
 							// active - выбранный
 							<Listbox.Option
-								key={langIdx}
+								key={i}
 								className={({ active }) =>
 									`relative dark:text-bg-dark-bu cursor-default select-none py-2 pl-10 pr-4 hover:font-medium `
 								}
@@ -51,7 +63,7 @@ const LangSwitch: FC<{ langSwitch: TLangSwitch[] }> = ({ langSwitch }) => {
 												<CheckIcon className='h-5 w-5' aria-hidden='true' />
 											</span>
 										) : null}
-										<span>{lang.lang}</span>
+										<div onClick={() => redirectedPathName(lang)}>{lang}</div>
 									</>
 								)}
 							</Listbox.Option>

@@ -1,5 +1,3 @@
-'use client'
-
 import cn from 'clsx'
 import { FC, useEffect } from 'react'
 import { useOutside } from '../../hooks/useOutside'
@@ -12,13 +10,13 @@ import ThemeSwitcher from '../../ui/header-ui/theme-switch'
 import IconBurger from '../../ui/ui-burger-menu/iconBurger'
 
 export const navLink: TNavLink[] = [
-	{ href: '#1', text: 'Home', id: '1' },
-	{ href: '#2', text: 'about us', id: '2' },
-	{ href: '#3', text: 'Программа', id: '3' },
-	{ href: '#4', text: 'Фото', id: '4' },
-	{ href: '#5', text: 'Школа', id: '5' },
-	{ href: '#6', text: 'ОргВзнос', id: '6' },
-	{ href: '#7', text: 'Публикации', id: '7' }
+	{ href: '/#1', text: 'Home', id: '1' },
+	{ href: '/#2', text: 'about us', id: '2' },
+	{ href: '/#3', text: 'Программа', id: '3' },
+	{ href: '/#4', text: 'Фото', id: '4' },
+	{ href: '/#5', text: 'Школа', id: '5' },
+	{ href: '/#6', text: 'ОргВзнос', id: '6' },
+	{ href: '/#7', text: 'Публикации', id: '7' }
 ]
 
 export const langSwitch: TLangSwitch[] = [
@@ -26,7 +24,8 @@ export const langSwitch: TLangSwitch[] = [
 	{ id: 2, lang: 'Rus' }
 ]
 
-const Header: FC<{ activePage: number }> = ({ activePage }) => {
+const Header: FC<{ activePage?: number }> = ({ activePage }) => {
+	// const Header = () => {
 	const { isScreenLg, isScreenXl } = useResize()
 	const { isShow, setIsShow, ref } = useOutside(false)
 
@@ -62,7 +61,7 @@ const Header: FC<{ activePage: number }> = ({ activePage }) => {
 
 					<div className='flex items-center gap-3'>
 						<InformationComponent />
-						<LangSwitch langSwitch={langSwitch} />
+						<LangSwitch />
 						<ThemeSwitcher />
 					</div>
 				</div>

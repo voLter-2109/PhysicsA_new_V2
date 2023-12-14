@@ -14,7 +14,7 @@ const CustomMap = () => {
 			center: [60.006395, 30.365195],
 			zoom: 14,
 			controls: ['fullscreenControl', 'zoomControl']
-			// controls: ['fullscreenControl']
+			//  controls: ['fullscreenControl']
 		})
 
 		myMap.geoObjects.add(

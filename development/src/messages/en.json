@@ -1,0 +1,19 @@
+{
+	"lang:": "en",
+	"landingPage": {
+		"HomeText": {
+			"title": "PhysicsA",
+			"title_two": "Saint Petersburg",
+			"subtitle": "International conference",
+			"subtitle_two": "23-27 October, 2023"
+		},
+		"AboutUs": {},
+		"ProgramOfPerfomances": {},
+		"SwiperComponent": {},
+		"LocationSection": {},
+		"OrganizationFree": {},
+		"Publications": {},
+		"Footer": {}
+	},
+	"personalAreaPage": {}
+}

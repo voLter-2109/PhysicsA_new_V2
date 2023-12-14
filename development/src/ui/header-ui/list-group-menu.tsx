@@ -1,3 +1,5 @@
+'use client'
+
 import cn from 'clsx'
 import { default as Link } from 'next/link'
 import { TNavLink } from '../../type/nav-bar-type'
@@ -17,9 +19,6 @@ const ListGroupMenu: React.FC<{
 	isShow,
 	classNameP
 }) => {
-	// useEffect(() => {
-	// 	console.log(activePage)
-	// }, [activePage])
 	return (
 		<div
 			className={(cn('flex items-center justify-between w-auto '), classNames)}

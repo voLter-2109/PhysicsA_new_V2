@@ -1,0 +1,19 @@
+{
+	"lang:": "en",
+	"landingPage": {
+		"HomeText": {
+			"title": "ФизикаA",
+			"title_two": "Санкт-Петербург",
+			"subtitle": "Международная конференция",
+			"subtitle_two": "23-27 октября, 2023"
+		},
+		"AboutUs": {},
+		"ProgramOfPerfomances": {},
+		"SwiperComponent": {},
+		"LocationSection": {},
+		"OrganizationFree": {},
+		"Publications": {},
+		"Footer": {}
+	},
+	"personalAreaPage": {}
+}

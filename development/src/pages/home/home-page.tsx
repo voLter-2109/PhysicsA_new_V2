@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import PageContainer from '../../ui/page-container/page-container'
 
@@ -12,6 +12,7 @@ import Publications from '../../components/component-content/publications/public
 import Error from '../../components/error/error'
 import Footer from '../../components/footer/footer'
 import Header from '../../components/nav-bar-header/header'
+import { TLandingPage } from '../../type/text-page-type'
 
 // import dynamic from 'next/dynamic'
 // import AboutUs from '../../components/component-content/about-us/aboutUs'
@@ -59,19 +60,17 @@ const DynamicOrganizationFree = dynamic(
 	}
 )
 
-const HomePage = () => {
-	const [activePage, setActivePage] = useState<number>(1)
+type Props = {
+	landingPageText: TLandingPage
+}
 
+const HomePage: FC<Props> = ({ landingPageText }) => {
+	const [activePage, setActivePage] = useState<number>(1)
 	const onChangeActivePage = (
 		inView: boolean,
 		entry: IntersectionObserverEntry,
 		id: number
 	) => {
-		// if (entry.target.firstElementChild && entry.target) {
-		// 	const targetId = entry.target.firstElementChild.getAttribute('id')
-		// 	if (targetId && inView) setActivePage(+targetId)
-		// }
-		console.log('id:' + id + 'inView:' + inView)
 		if (id && inView) setActivePage(+id)
 	}
 
@@ -116,8 +115,8 @@ const HomePage = () => {
 				</PageContainer>
 
 				<PageContainer
-					className='min-h-[80vh]'
 					onChangeActivePage={onChangeActivePage}
+					className='min-h-[80vh]'
 					id='5'
 				>
 					<ErrorBoundary fallback={<Error />}>
@@ -125,7 +124,6 @@ const HomePage = () => {
 							query={{
 								apikey: process.env.YANDEX_API_KEY,
 								lang: 'ru_RU',
-								ns: 'use-load-option',
 								load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl'
 							}}
 						>
@@ -153,3 +151,11 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+// onChangeActivePage={onChangeActivePage}
+// onChangeActivePage={onChangeActivePage}
+// onChangeActivePage={onChangeActivePage}
+// onChangeActivePage={onChangeActivePage}
+// onChangeActivePage={onChangeActivePage}
+// onChangeActivePage={onChangeActivePage}
+// onChangeActivePage={onChangeActivePage}

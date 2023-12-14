@@ -1,7 +1,7 @@
-import { FC } from 'react'
 import Heading from '../../../ui/heading/heading'
 
-const HomeText: FC = () => {
+const HomeText = () => {
+
 	return (
 		<>
 			{/* <div className=' p-4 pt-20 h-fit dark:h-[100vh] flex items-center dark:flex-col flex-row dark:justify-between justify-between w-full text-bg-dark-bu'> */}
@@ -16,12 +16,12 @@ const HomeText: FC = () => {
 					className='font-extrabold  dark:text-bg-dark-bu
 					text-colors-light-dark/100  text-center pb-10 opacity-1'
 				>
-					PhysicsA <br />
-					САНКТ-ПЕТЕРБУРГ
+					{/* {t('title')} <br /> */}
+					{/* {t('title_two')} */}
 				</Heading>
 				<div className='dark:w-fit text-center font-medium [&>p]:text-[20px] dark:text-bg-dark-bu text-colors-light-dark/100'>
-					<p>International conference</p>
-					<p>23-27 October, 2023</p>
+					{/* <p>{t('subtitle')}</p> */}
+					{/* <p>{t('subtitle_two')}</p> */}
 				</div>
 			</div>
 		</>

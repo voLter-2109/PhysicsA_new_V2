@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 type UseLockedBodyOutput = [boolean, (locked: boolean) => void]
 
-export function useLockedBody(
+function useLockedBody(
 	initialLocked = false,
 	rootId = 'root' // Default to `___gatsby` to not introduce breaking change
 ): UseLockedBodyOutput {
