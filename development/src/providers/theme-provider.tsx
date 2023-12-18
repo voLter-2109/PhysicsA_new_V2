@@ -1,26 +1,25 @@
-"use client";
+'use client'
 
-import { ThemeProvider, useTheme } from "next-themes";
-import { FC, PropsWithChildren, useEffect, useState } from "react";
+import { ThemeProvider } from 'next-themes'
+import { FC, PropsWithChildren, useEffect, useState } from 'react'
 
 const ThemeComponentProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [mounted, setMounted] = useState<boolean>(false);
- 
+	const [mounted, setMounted] = useState<boolean>(false)
 
-  useEffect(() => {
-    
-    setMounted(true);
-  }, []);
 
-  if (!mounted) {
-    return null;
-  }
+	useEffect(() => {
+		setMounted(true)
+	}, [])
 
-  return (
-    <ThemeProvider enableSystem={true} attribute="class">
-      {children}
-    </ThemeProvider>
-  );
-};
+	if (!mounted) {
+		return null
+	}
 
-export default ThemeComponentProvider;
+	return (
+		<ThemeProvider enableSystem={true} attribute='class'>
+			{children}
+		</ThemeProvider>
+	)
+}
+
+export default ThemeComponentProvider

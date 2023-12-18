@@ -38,11 +38,10 @@ export async function generateStaticParams() {
 	return i18n.locales.map(locale => ({ lang: locale }))
 }
 
-const RootLayout: FC<Props> = ({ children, params: { locale } }) => {
+const RootLayout: FC<Props> = async ({ children, params: { locale } }) => {
 	if (!localeConst.includes(locale as any)) notFound()
-	// console.log(params)
 
-	return (	
+	return (
 		<html lang={locale} className={` ${robotoMono.variable} font-sans`}>
 			<body id='root'>
 				<ThemeComponentProvider>{children}</ThemeComponentProvider>

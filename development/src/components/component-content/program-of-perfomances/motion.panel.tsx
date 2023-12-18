@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import { variants } from './animate'
 
 function MotionTabPanel({
-	panelText
+	panelText,
+	thead
 }: {
 	panelText: { type: string; start: string; end: string; text: string }[]
+	thead: string[]
 }) {
 	return (
 		<Tab.Panel
@@ -22,9 +24,9 @@ function MotionTabPanel({
 			>
 				<thead>
 					<tr className='[&>th]:border-b'>
-						<th>Начало</th>
-						<th>Конец</th>
-						<th>Доклад</th>
+						{thead.map((item, i) => {
+							return <th key={i}>{item}</th>
+						})}
 					</tr>
 				</thead>
 				<tbody className=''>

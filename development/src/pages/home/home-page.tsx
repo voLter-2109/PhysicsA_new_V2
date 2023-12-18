@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useState } from 'react'
+import { FC, createContext, useCallback, useContext, useState } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import PageContainer from '../../ui/page-container/page-container'
 
@@ -12,6 +12,7 @@ import Publications from '../../components/component-content/publications/public
 import Error from '../../components/error/error'
 import Footer from '../../components/footer/footer'
 import Header from '../../components/nav-bar-header/header'
+import { MainContext } from '../../providers/text-provider'
 import { TLandingPage } from '../../type/text-page-type'
 
 // import dynamic from 'next/dynamic'
@@ -61,91 +62,95 @@ const DynamicOrganizationFree = dynamic(
 )
 
 type Props = {
-	landingPageText: TLandingPage
+	landingPage: TLandingPage
 }
 
-const HomePage: FC<Props> = ({ landingPageText }) => {
+export const TextContext = createContext({} as TLandingPage)
+
+const HomePage: FC<Props> = ({ landingPage }) => {
+	
 	const [activePage, setActivePage] = useState<number>(1)
-	const onChangeActivePage = (
-		inView: boolean,
-		entry: IntersectionObserverEntry,
-		id: number
-	) => {
-		if (id && inView) setActivePage(+id)
-	}
+	const onChangeActivePage = useCallback(
+		(inView: boolean, entry: IntersectionObserverEntry, id: number) => {
+			if (id && inView) setActivePage(+id)
+		},
+		[]
+	)
 
 	return (
 		<>
-			<div className='flex flex-col'>
-				<Header activePage={activePage} />
+			<TextContext.Provider value={landingPage}>
+				<div className='flex flex-col'>
+					<Header activePage={activePage} />
 
-				<PageContainer
-					onChangeActivePage={onChangeActivePage}
-					id='1'
-					container={false}
-					className="h-[100vh] flex relative shadow-2xl justify-end dark:bg-[url('/bg-par-black.jpg')] bg-[url('/bg-par-light.jpg')]"
-					style={{
-						backgroundAttachment: 'fixed',
-						backgroundPosition: 'center',
-						backgroundRepeat: 'no-repeat',
-						backgroundSize: 'cover'
-					}}
-				>
-					<ErrorBoundary fallback={<Error />}>
-						<HomeText />
-					</ErrorBoundary>
-				</PageContainer>
+					<PageContainer
+						onChangeActivePage={onChangeActivePage}
+						id='1'
+						container={false}
+						className="h-[100vh] flex  relative shadow-2xl justify-end dark:bg-bd-dark  dark:bg-[url('/bg-par-black.jpg')] bg-[url('/bg-par-light.jpg')]"
+						style={{
+							backgroundAttachment: 'fixed',
+							backgroundPosition: 'center',
+							backgroundRepeat: 'no-repeat',
+							backgroundSize: 'cover'
+						}}
+					>
+						<ErrorBoundary fallback={<Error />}>
+							<HomeText />
+						</ErrorBoundary>
+					</PageContainer>
 
-				<PageContainer onChangeActivePage={onChangeActivePage} id='2'>
-					<ErrorBoundary fallback={<Error />}>
-						<AboutUs />
-					</ErrorBoundary>
-				</PageContainer>
+					<PageContainer onChangeActivePage={onChangeActivePage} id='2'>
+						<ErrorBoundary fallback={<Error />}>
+							<AboutUs />
+						</ErrorBoundary>
+					</PageContainer>
+					{/* //! */}
+					<PageContainer onChangeActivePage={onChangeActivePage} id='3'>
+						<ErrorBoundary fallback={<Error />}>
+							<DynamicProgramOfPerfomances />
+						</ErrorBoundary>
+					</PageContainer>
 
-				<PageContainer onChangeActivePage={onChangeActivePage} id='3'>
-					<ErrorBoundary fallback={<Error />}>
-						<DynamicProgramOfPerfomances />
-					</ErrorBoundary>
-				</PageContainer>
+					<PageContainer onChangeActivePage={onChangeActivePage} id='4'>
+						<ErrorBoundary fallback={<Error />}>
+							<DynamicSwiperComponent />
+						</ErrorBoundary>
+					</PageContainer>
 
-				<PageContainer onChangeActivePage={onChangeActivePage} id='4'>
-					<ErrorBoundary fallback={<Error />}>
-						<DynamicSwiperComponent />
-					</ErrorBoundary>
-				</PageContainer>
+					<PageContainer
+						onChangeActivePage={onChangeActivePage}
+						className='min-h-[80vh]'
+						id='5'
+					>
+						<ErrorBoundary fallback={<Error />}>
+							<YMaps
+								query={{
+									apikey: process.env.YANDEX_API_KEY,
+									lang: 'ru_RU',
+									load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl'
+								}}
+							>
+								<DynamicLocationSection />
+							</YMaps>
+						</ErrorBoundary>
+					</PageContainer>
 
-				<PageContainer
-					onChangeActivePage={onChangeActivePage}
-					className='min-h-[80vh]'
-					id='5'
-				>
-					<ErrorBoundary fallback={<Error />}>
-						<YMaps
-							query={{
-								apikey: process.env.YANDEX_API_KEY,
-								lang: 'ru_RU',
-								load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl'
-							}}
-						>
-							<DynamicLocationSection />
-						</YMaps>
-					</ErrorBoundary>
-				</PageContainer>
+					<PageContainer onChangeActivePage={onChangeActivePage} id='6'>
+						<ErrorBoundary fallback={<Error />}>
+							<DynamicOrganizationFree />
+						</ErrorBoundary>
+					</PageContainer>
 
-				<PageContainer onChangeActivePage={onChangeActivePage} id='6'>
-					<ErrorBoundary fallback={<Error />}>
-						<DynamicOrganizationFree />
-					</ErrorBoundary>
-				</PageContainer>
+					<PageContainer onChangeActivePage={onChangeActivePage} id='7'>
+						<ErrorBoundary fallback={<Error />}>
+							<Publications />
+						</ErrorBoundary>
+					</PageContainer>
 
-				<PageContainer onChangeActivePage={onChangeActivePage} id='7'>
-					<ErrorBoundary fallback={<Error />}>
-						<Publications />
-					</ErrorBoundary>
-				</PageContainer>
-
-				<Footer />
-			</div>
+					<Footer />
+				</div>
+			</TextContext.Provider>
 		</>
 	)
 }

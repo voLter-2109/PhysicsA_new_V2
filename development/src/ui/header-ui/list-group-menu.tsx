@@ -2,10 +2,9 @@
 
 import cn from 'clsx'
 import { default as Link } from 'next/link'
-import { TNavLink } from '../../type/nav-bar-type'
 
 const ListGroupMenu: React.FC<{
-	navLink: TNavLink[]
+	navLink: string[]
 	activePage?: number
 	classNames?: string
 	classNamesLi?: string
@@ -19,6 +18,7 @@ const ListGroupMenu: React.FC<{
 	isShow,
 	classNameP
 }) => {
+
 	return (
 		<div
 			className={(cn('flex items-center justify-between w-auto '), classNames)}
@@ -29,39 +29,40 @@ const ListGroupMenu: React.FC<{
 					classNamesLi ? classNamesLi : ''
 				)}
 			>
-				{navLink.map((link: TNavLink, i: number) => {
-					return (
-						<li
-							key={i}
-							className={cn(
-								isShow ? 'animate__backInLeft w-fit ' : '',
-								'group m-3'
-							)}
-						>
-							<Link
-								href={link.href}
-								onClick={() => console.log('click link' + isShow)}
+				{navLink &&
+					navLink.map((link: string, i: number) => {
+						return (
+							<li
+								key={i}
 								className={cn(
-									'block mr-4 relative hover:text-bg-light-bu dark:hover:text-colors-dark-dark ',
-									'flex flex-row items-baseline justify-center',
-									activePage === +link.id
-										? 'text-bg-light-bu dark:text-colors-dark-dark'
-										: 'text-colors-light-dark dark:text-bg-dark-bu'
+									isShow ? 'animate__backInLeft w-fit ' : '',
+									'group'
 								)}
-								aria-current='page'
 							>
-								<span className=' inline-block z-[1]'>{link.text}</span>
-								<p
+								<Link
+									href={`/#${i + 1}`}
+									onClick={() => console.log('click link' + isShow)}
 									className={cn(
-										'absolute z-0 top-[95%] bg-colors-light-dark dark:bg-bg-light/90',
-										'  w-0 group-hover:w-[100%]  left-0 rounded-md h-[10%] transition-all 0.4s',
-										classNameP
+										'block mr-4 relative hover:text-bg-light-bu dark:hover:text-colors-dark-dark ',
+										'flex flex-row items-baseline justify-center',
+										activePage === +(i + 1)
+											? 'text-bg-light-bu dark:text-colors-dark-dark'
+											: 'text-colors-light-dark dark:text-bg-dark-bu'
 									)}
-								></p>
-							</Link>
-						</li>
-					)
-				})}
+									aria-current='page'
+								>
+									<span className=' inline-block z-[1]'>{link}</span>
+									<p
+										className={cn(
+											'absolute z-0 top-[95%] bg-colors-light-dark dark:bg-bg-light/90',
+											'  w-0 group-hover:w-[100%]  left-0 rounded-md h-[10%] transition-all 0.4s',
+											classNameP
+										)}
+									></p>
+								</Link>
+							</li>
+						)
+					})}
 			</ul>
 		</div>
 	)

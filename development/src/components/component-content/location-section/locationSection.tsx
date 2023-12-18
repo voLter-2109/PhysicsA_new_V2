@@ -1,6 +1,7 @@
 import { Tab, Transition } from '@headlessui/react'
 import cn from 'clsx'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { TextContext } from '../../../pages/home/home-page'
 import Accordion from '../../../ui/accordion/accordion'
 import { textAccordionLocationSection } from '../../../ui/accordion/textAccordion'
 import CustomMap from '../../../ui/custom-map/customMap'
@@ -8,37 +9,30 @@ import Heading from '../../../ui/heading/heading'
 
 const LocationSection = () => {
 	const [tabIndex, setTabIndex] = useState<number>(0)
+	const { LocationSection } = useContext(TextContext)
 
 	return (
 		<div className='w-full'>
-			<Heading>Программа</Heading>
+			<Heading>{LocationSection.heading}</Heading>
 			<Tab.Group selectedIndex={tabIndex} onChange={setTabIndex}>
 				<Tab.List className='flex space-x-1 rounded-xl p-1'>
-					<Tab
-						className={({ selected }) =>
-							cn(
-								'w-full rounded-lg py-2.5 font-extrabold text-lg leading-5 text-bg-light',
-								selected
-									? 'dark:bg-bd-dark dark:text-colors-dark-dark shadow bg-bg-light-bu text-colors-light-dark'
-									: ' dark:hover:bg-bd-dark dark:hover:text-colors-dark-dark dark:bg-bd-dark/[0.42] dark:text-bg-dark-bu hover:bg-bg-light-bu bg-bg-light-bu/[0.7] text-colors-light-dark'
-							)
-						}
-					>
-						1
-					</Tab>
-
-					<Tab
-						className={({ selected }) =>
-							cn(
-								'w-full rounded-lg py-2.5 font-extrabold text-lg leading-5 text-bg-light',
-								selected
-									? 'dark:bg-bd-dark dark:text-colors-dark-dark shadow bg-bg-light-bu text-colors-light-dark'
-									: ' dark:hover:bg-bd-dark dark:hover:text-colors-dark-dark dark:bg-bd-dark/[0.42] dark:text-bg-dark-bu hover:bg-bg-light-bu bg-bg-light-bu/[0.7] text-colors-light-dark'
-							)
-						}
-					>
-						2
-					</Tab>
+					{LocationSection.hTabs.map((tab, index) => {
+						return (
+							<Tab
+								key={index}
+								className={({ selected }) =>
+									cn(
+										'w-full rounded-lg py-2.5 font-extrabold text-lg leading-5 text-bg-light',
+										selected
+											? 'dark:bg-bd-dark dark:text-colors-dark-dark shadow bg-bg-light-bu text-colors-light-dark'
+											: ' dark:hover:bg-bd-dark dark:hover:text-colors-dark-dark dark:bg-bd-dark/[0.42] dark:text-bg-dark-bu hover:bg-bg-light-bu bg-bg-light-bu/[0.7] text-colors-light-dark'
+									)
+								}
+							>
+								{tab}
+							</Tab>
+						)
+					})}
 				</Tab.List>
 				<Tab.Panels>
 					<Tab.Panel className='shadow-lg '>
@@ -53,10 +47,10 @@ const LocationSection = () => {
 							leaveTo='opacity-0'
 						>
 							<Heading className='text-lg'>
-								<strong>Санкт-Петербург</strong> <br />
-								гостиница «Спутник» пр. Тореза, 36,
+								<strong>{LocationSection.bTabs[0].site}</strong> <br />
+								{LocationSection.bTabs[0].adress}
 							</Heading>
-							<CustomMap />
+							<CustomMap initialMap={LocationSection.map} />
 						</Transition>
 					</Tab.Panel>
 					<Tab.Panel className='shadow-lg '>

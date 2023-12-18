@@ -1,7 +1,8 @@
 import { useYMaps } from '@pbe/react-yandex-maps'
 import { useEffect, useRef } from 'react'
+import { TMap } from '../../type/text-page-type'
 
-const CustomMap = () => {
+const CustomMap = ({ initialMap }: { initialMap: TMap }) => {
 	const mapRef = useRef(null)
 	const ymaps = useYMaps(['Map'])
 

@@ -50,6 +50,7 @@ const LangSwitch = () => {
 								className={({ active }) =>
 									`relative dark:text-bg-dark-bu cursor-default select-none py-2 pl-10 pr-4 hover:font-medium `
 								}
+								onClick={() => redirectedPathName(lang)}
 								value={lang}
 							>
 								{({ selected }) => (
@@ -63,7 +64,7 @@ const LangSwitch = () => {
 												<CheckIcon className='h-5 w-5' aria-hidden='true' />
 											</span>
 										) : null}
-										<div onClick={() => redirectedPathName(lang)}>{lang}</div>
+										<span>{lang}</span>
 									</>
 								)}
 							</Listbox.Option>

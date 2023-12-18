@@ -1,16 +1,287 @@
 {
-	"lang:": "en",
+	"lang": "en",
+	"lang_map": "en_EN",
 	"landingPage": {
+		"NavBarText": [
+			"Homeen",
+			"about usen",
+			"Программаen",
+			"Фотоen",
+			"Школаen",
+			"ОргВзносen",
+			"Публикацииen"
+		],
 		"HomeText": {
 			"title": "PhysicsA",
 			"title_two": "Saint Petersburg",
 			"subtitle": "International conference",
 			"subtitle_two": "23-27 October, 2023"
 		},
-		"AboutUs": {},
-		"ProgramOfPerfomances": {},
-		"SwiperComponent": {},
-		"LocationSection": {},
+		"AboutUs": {
+			"head": "AboutUs",
+			"text": [
+				{
+					"tag": "span",
+					"enter": true,
+					"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at necessitatibus fugit assumenda in quas beatae laborum, eos delectus. Debitis non suscipit consequuntur quia iure ullam numquam sunt at totam."
+				},
+				{
+					"tag": "span",
+					"enter": false,
+					"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at necessitatibus fugit assumenda in quas beatae laborum, eos delectus. Debitis non suscipit consequuntur quia iure ullam numquam sunt at totam."
+				},
+				{
+					"tag": "link",
+					"type": "text",
+					"typeLink": "https://journals.ioffe.ru/",
+					"text": " издаваемых ФТИ им. А.Ф. Иоффе",
+					"enter": false
+				},
+				{
+					"tag": "span",
+					"enter": true,
+					"text": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at necessitatibus fugit assumenda in quas beatae laborum, eos delectus. Debitis non suscipit consequuntur quia iure ullam numquam sunt at totam."
+				},
+				{
+					"tag": "span",
+					"enter": true,
+					"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo at necessitatibus fugit assumenda in quas beatae laborum, eos delectus. Debitis non suscipit consequuntur quia iure ullam numquam sunt at totam."
+				}
+			]
+		},
+		"ProgramOfPerfomances": {
+			"header": "Program",
+			"thead": ["start", "end", "speaker"],
+			"table": {
+				"23ru": [
+					{
+						"type": "colSpan",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "председатель - проф. Аверкиев Никита Сергеевич"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "colSpan",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "председатель - проф. Аверкиев Никита Сергеевич"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					}
+				],
+				"24ru": [
+					{
+						"type": "colSpan",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "председатель - проф. РАН Соколовский Григорий Семенович"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад Новикова Т. П. École Polytechnique Recent Аdvances in Wide-Field Imaging Mueller Polarimetry for biomedical applications"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад Новикова Т. П. École Polytechnique Recent Аdvances in Wide-Field Imaging Mueller Polarimetry for biomedical applications"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад Новикова Т. П. École Polytechnique Recent Аdvances in Wide-Field Imaging Mueller Polarimetry for biomedical applications"
+					},
+					{
+						"type": "colSpan",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "председатель - проф. Аверкиев Никита Сергеевич"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					}
+				],
+				"25ru": [
+					{
+						"type": "colSpan",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "председатель - проф. Аверкиев Никита Сергеевич"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "colSpan",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "председатель - проф. Аверкиев Никита Сергеевич"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					},
+					{
+						"type": "table",
+						"start": "10:00",
+						"end": "11:00",
+						"text": "приглашенный доклад \nБаранов А. Н. \nUniversity of Montpellier \nCascade lasers grown on group-IV substrates"
+					}
+				]
+			}
+		},
+		"SwiperComponent": { "heading": "Foto" },
+		"LocationSection": {
+			"heading": "Program",
+			"map": {
+				"center": [60.006395, 30.365195],
+				"placemark": {
+					"center": [60.00539816057044, 30.354064792088852],
+					"zoom": 14
+				}
+			},
+			"hTabs": ["location", "section"],
+			"bTabs": [
+				{
+					"site": "Sant Petersburg",
+					"adress": "Sputnik, toresa 36"
+				},
+				[
+					{
+						"name": "Programs fee",
+						"list": [
+							"ENАверкиев Никита Сергеевич (ФТИ им. А. Ф. Иоффе) — председатель",
+							"ENСоколовский Григорий Семенович (ФТИ им. А.Ф. Иоффе) — заместитель председателя",
+							"ENАрсеев Петр Иварович (ФИАН)",
+							"ENГавриленко Владимир Изяславович (ИФМ)",
+							"ENДьяконов Михаил Игоревич (Université Montpellier II, France)",
+							"ENДунаев Андрей Валерьевич (ОГУ им. И.С. Тургенева)",
+							"ENИванчик Александр Владимирович (ФТИ им. А. Ф. Иоффе)",
+							"ENКалашникова Александра Михайловна (ФТИ им. А. Ф. Иоффе)",
+							"ENКарачинский Леонид Яковлевич (ООО 'Коннектор Оптикс')",
+							"ENКонников Семен Григорьевич (ФТИ им. А. Ф. Иоффе)",
+							"ENКучинский Владимир Ильич (СПбГЭТУ, ФТИ им. Иоффе)",
+							"ENНестоклон Михаил Олегович (ФТИ им. А. Ф. Иоффе)",
+							"ENПихтин Никита Александрович (ООО «Эльфолюм», ФТИ им. А. Ф. Иоффе)",
+							"ENРудь Василий Юрьевич (СПбПУ)",
+							"ENСтепина Наталья Петровна (ИФП им. А. В. Ржанова)",
+							"ENСурис Роберт Арнольдович (ФТИ им. А. Ф. Иоффе)",
+							"ENТеплова Наталья Витальевна (ФТИ им. А. Ф. Иоффе)",
+							"ENУстинов Виктор Михайлович (НТЦ микроэлектроники РАН)"
+						]
+					},
+					{
+						"name": "Comitet",
+						"list": [
+							"ENСоколовский Григорий Семенович (ФТИ им. А.Ф. Иоффе) — председатель",
+							"ENАзбель Александр Юльевич (ФТИ им. А. Ф. Иоффе)",
+							"ENБекман Артем Александрович (ФТИ им. А. Ф. Иоффе)",
+							"ENДюделев Владислав Викторович (ФТИ им. А. Ф. Иоффе)",
+							"ENКогновицкая Елена Андреевна (ВНИИМ им. Д.И. Менделеева)",
+							"ENКорнышев Григорий Олегович(СПбАУ, ФТИ им. А. Ф. Иоффе)",
+							"ENЛосев Сергей Николаевич (ФТИ им. А. Ф. Иоффе)",
+							"ENРябочкина Полина Анатольевна (МГУ им. Н. П. Огарёва)",
+							"ENЧеротченко Евгения Дмитриевна (ФТИ им. А. Ф. Иоффе)",
+							"ENЧистяков Дмитрий Владимирович (ФТИ им. А. Ф. Иоффе)"
+						]
+					},
+					{
+						"name": "section",
+						"list": [
+							"ENАстрономия и астрофизика",
+							"ENАтомная физика и физика элементарных частиц",
+							"ENБиофизика",
+							"ENМатфизика и численные методы",
+							"ENНаноструктурированные и тонкопленочные материалы",
+							"ENОптика и спектроскопия",
+							"ENОптоэлектронные приборы",
+							"ENПоверхностные явления",
+							"ENПриборы и материалы ТГц и СВЧ диапазона",
+							"ENПримеси и дефекты в твердом теле",
+							"ENФизика и технология преобразования энергии",
+							"ENФизика квантовых структур",
+							"ENФизика плазмы, гидро- и аэродинамика",
+							"ENФизика ферроиков"
+						]
+					}
+				]
+			]
+		},
 		"OrganizationFree": {},
 		"Publications": {},
 		"Footer": {}

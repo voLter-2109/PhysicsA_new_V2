@@ -1,21 +1,23 @@
 import { Tab, Transition } from '@headlessui/react'
 import cn from 'clsx'
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
+import { TextContext } from '../../../pages/home/home-page'
 import Heading from '../../../ui/heading/heading'
 import MotionTabPanel from './motion.panel'
-import { initialText } from './text-panel'
 
 const ProgramOfPerfomances: FC = () => {
-	let [panelTexts] = useState(initialText)
+	const { ProgramOfPerfomances } = useContext(TextContext)
+	// let [panelTexts] = useState(initialText)
+	// console.log(JSON.stringify(initialText))
 	const [tabIndex, setTabIndex] = useState(0)
 
 	return (
 		<>
 			<div className='w-full'>
-				<Heading>Программа</Heading>
+				<Heading>{ProgramOfPerfomances.header}</Heading>
 				<Tab.Group selectedIndex={tabIndex} onChange={setTabIndex}>
 					<Tab.List className='flex space-x-1 rounded-xl p-1'>
-						{Object.keys(panelTexts).map((date, i) => (
+						{Object.keys(ProgramOfPerfomances.table).map((date, i) => (
 							<Tab
 								key={date + i}
 								className={({ selected }) =>
@@ -32,7 +34,7 @@ const ProgramOfPerfomances: FC = () => {
 						))}
 					</Tab.List>
 					<Tab.Panels>
-						{Object.values(panelTexts).map((panelText, idx) => (
+						{Object.values(ProgramOfPerfomances.table).map((panelText, idx) => (
 							<Tab.Panel key={idx} className='shadow-lg '>
 								<Transition
 									appear
@@ -44,7 +46,11 @@ const ProgramOfPerfomances: FC = () => {
 									leaveFrom='opacity-100'
 									leaveTo='opacity-0'
 								>
-									<MotionTabPanel key={idx} panelText={panelText} />
+									<MotionTabPanel
+										key={idx}
+										panelText={panelText}
+										thead={ProgramOfPerfomances.thead}
+									/>
 								</Transition>
 							</Tab.Panel>
 						))}

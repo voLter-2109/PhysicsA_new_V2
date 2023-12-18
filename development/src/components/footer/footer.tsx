@@ -1,7 +1,4 @@
-import LangSwitch from '../../ui/header-ui/lang-switch'
-import ListGroupMenu from '../../ui/header-ui/list-group-menu'
 import ThemeSwitcher from '../../ui/header-ui/theme-switch'
-import { langSwitch, navLink } from '../nav-bar-header/header'
 
 const Footer = () => {
 	return (
@@ -15,13 +12,13 @@ const Footer = () => {
 			>
 				Physics.SPB
 			</span>
-			<ListGroupMenu
+			{/* <ListGroupMenu
 				navLink={navLink}
 				classNames='items-center text-center text-sm '
 				classNamesLi='items-center whitespace-nowrap flex flex-row max-lg:flex-col [&>li]:m-0'
-			/>
+			/> */}
 			<div className='flex '>
-				<LangSwitch langSwitch={langSwitch}  />
+				{/* <LangSwitch langSwitch={langSwitch} /> */}
 				<ThemeSwitcher />
 			</div>
 		</div>

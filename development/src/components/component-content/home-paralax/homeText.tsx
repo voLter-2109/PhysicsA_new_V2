@@ -1,7 +1,12 @@
+import { FC, useContext } from 'react'
+import { TextContext } from '../../../pages/home/home-page'
+import { MainContext } from '../../../providers/text-provider'
 import Heading from '../../../ui/heading/heading'
 
-const HomeText = () => {
-
+const HomeText: FC = () => {
+	const test = useContext(MainContext)
+	console.log(test)
+	const { HomeText } = useContext(TextContext)
 	return (
 		<>
 			{/* <div className=' p-4 pt-20 h-fit dark:h-[100vh] flex items-center dark:flex-col flex-row dark:justify-between justify-between w-full text-bg-dark-bu'> */}
@@ -16,12 +21,12 @@ const HomeText = () => {
 					className='font-extrabold  dark:text-bg-dark-bu
 					text-colors-light-dark/100  text-center pb-10 opacity-1'
 				>
-					{/* {t('title')} <br /> */}
-					{/* {t('title_two')} */}
+					{HomeText.title} <br />
+					{HomeText.title_two}
 				</Heading>
 				<div className='dark:w-fit text-center font-medium [&>p]:text-[20px] dark:text-bg-dark-bu text-colors-light-dark/100'>
-					{/* <p>{t('subtitle')}</p> */}
-					{/* <p>{t('subtitle_two')}</p> */}
+					<p>{HomeText.subtitle}</p>
+					<p>{HomeText.subtitle_two}</p>
 				</div>
 			</div>
 		</>

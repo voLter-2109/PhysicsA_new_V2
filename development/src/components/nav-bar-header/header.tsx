@@ -1,33 +1,26 @@
+'use client'
+
 import cn from 'clsx'
-import { FC, useEffect } from 'react'
+import { FC, useContext, useEffect } from 'react'
 import { useOutside } from '../../hooks/useOutside'
-import { useResize } from '../../hooks/useResize'
-import { TLangSwitch, TNavLink } from '../../type/nav-bar-type'
+import { useWindowSize } from '../../hooks/useResize'
+import { TNavBarText } from '../../type/text-page-type'
 import InformationComponent from '../../ui/header-ui/information'
 import LangSwitch from '../../ui/header-ui/lang-switch'
 import ListGroupMenu from '../../ui/header-ui/list-group-menu'
 import ThemeSwitcher from '../../ui/header-ui/theme-switch'
 import IconBurger from '../../ui/ui-burger-menu/iconBurger'
+import { TextContext } from '../../pages/home/home-page'
 
-export const navLink: TNavLink[] = [
-	{ href: '/#1', text: 'Home', id: '1' },
-	{ href: '/#2', text: 'about us', id: '2' },
-	{ href: '/#3', text: 'Программа', id: '3' },
-	{ href: '/#4', text: 'Фото', id: '4' },
-	{ href: '/#5', text: 'Школа', id: '5' },
-	{ href: '/#6', text: 'ОргВзнос', id: '6' },
-	{ href: '/#7', text: 'Публикации', id: '7' }
-]
+type Props = {
+	activePage: number
+}
 
-export const langSwitch: TLangSwitch[] = [
-	{ id: 1, lang: 'Eng' },
-	{ id: 2, lang: 'Rus' }
-]
-
-const Header: FC<{ activePage?: number }> = ({ activePage }) => {
-	// const Header = () => {
-	const { isScreenLg, isScreenXl } = useResize()
+const Header: FC<Props> = ({ activePage }) => {
+	const { isScreenLg, isScreenXl } = useWindowSize()
 	const { isShow, setIsShow, ref } = useOutside(false)
+
+const {NavBarText} = useContext(TextContext)
 
 	useEffect(() => {
 		if (isScreenLg) {
@@ -52,7 +45,7 @@ const Header: FC<{ activePage?: number }> = ({ activePage }) => {
 					</span>
 					{isScreenXl && (
 						<ListGroupMenu
-							navLink={navLink}
+							navLink={NavBarText}
 							activePage={activePage}
 							classNames='flex flex-row text-center text-lg '
 							classNamesLi='items-center whitespace-nowrap'
@@ -76,10 +69,10 @@ const Header: FC<{ activePage?: number }> = ({ activePage }) => {
 			>
 				<ListGroupMenu
 					isShow={isShow}
-					navLink={navLink}
+					navLink={NavBarText}
 					activePage={activePage}
 					classNames='flex flex-col mt-[15vh] text-center w-fit [&>ul]:flex-col m-auto [&>ul]:text-2xl'
-					classNamesLi='animate__backInLeft'
+					classNamesLi='animate__backInLeft [&>li]:mb-5'
 					classNameP=''
 				/>
 			</div>

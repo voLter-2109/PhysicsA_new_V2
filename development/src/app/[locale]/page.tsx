@@ -1,3 +1,5 @@
+// 'use client'
+
 import { FC } from 'react'
 import { Locale } from '../../i18n.config'
 import { getDictionary } from '../../i18n/dictionary'
@@ -8,13 +10,16 @@ type Props = {
 }
 
 const RootPage: FC<Props> = async ({ params: { locale } }) => {
+	// const RootPage: FC<Props> = () => {
 	const { landingPage } = await getDictionary(locale)
-	console.log(landingPage)
-	return (
-		<div>
-			<HomePage landingPageText={landingPage} />
-		</div>
-	)
+	// const test = useContext(MainContext)
+	if (landingPage) {
+		return (
+			<div>
+				<HomePage landingPage={landingPage} />
+			</div>
+		)
+	}
 }
 
 export default RootPage
