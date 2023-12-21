@@ -37,7 +37,7 @@ export function useWindowSize() {
 	}, [])
 
 	return {
-		with: windowSize,
+		width: windowSize,
 		isScreenSm: windowSize.width >= SCREEN_SM,
 		isScreenMd: windowSize.width >= SCREEN_MD,
 		isScreenLg: windowSize.width >= SCREEN_LG,

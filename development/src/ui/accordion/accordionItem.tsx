@@ -1,7 +1,7 @@
 import { ChevronDoubleDownIcon } from '@heroicons/react/20/solid'
 import cn from 'clsx'
 import { MouseEventHandler, useRef } from 'react'
-import { TDataAccordion } from './textAccordion'
+import { TDataAccordion } from './accordion'
 
 const AccordionItem = ({
 	data,
@@ -24,7 +24,7 @@ const AccordionItem = ({
 				)}
 				onClick={onClick}
 			>
-				<p>{data.header}</p>
+				<p>{data.name}</p>
 				<ChevronDoubleDownIcon
 					width={30}
 					className={`transition-all 0.4s ease ${isOpen ? 'rotate-180' : ''}`}
@@ -41,7 +41,7 @@ const AccordionItem = ({
 				}
 			>
 				<ul>
-					{data.body.map((item, i) => (
+					{data.list.map((item, i) => (
 						<li
 							className='rounded-md my-1 border-l-2 dark:border-bg-dark-bu border-bg-light-bu/[0.7]'
 							key={i}

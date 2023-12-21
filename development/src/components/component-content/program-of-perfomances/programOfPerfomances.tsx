@@ -1,23 +1,24 @@
 import { Tab, Transition } from '@headlessui/react'
 import cn from 'clsx'
+import { motion } from 'framer-motion'
 import { FC, useContext, useState } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
+import CustomTable from '../../../ui/custom-table/customTable'
 import Heading from '../../../ui/heading/heading'
-import MotionTabPanel from './motion.panel'
+import { variants } from '../../../utils/animateTabs'
 
 const ProgramOfPerfomances: FC = () => {
 	const { ProgramOfPerfomances } = useContext(TextContext)
-	// let [panelTexts] = useState(initialText)
-	// console.log(JSON.stringify(initialText))
-	const [tabIndex, setTabIndex] = useState(0)
+	const [tabIndex, setTabIndex] = useState<number>(0)
 
 	return (
 		<>
 			<div className='w-full'>
-				<Heading>{ProgramOfPerfomances.header}</Heading>
+				<Heading>{ProgramOfPerfomances.head}</Heading>
+
 				<Tab.Group selectedIndex={tabIndex} onChange={setTabIndex}>
 					<Tab.List className='flex space-x-1 rounded-xl p-1'>
-						{Object.keys(ProgramOfPerfomances.table).map((date, i) => (
+						{ProgramOfPerfomances.hTabs.map((date, i) => (
 							<Tab
 								key={date + i}
 								className={({ selected }) =>
@@ -34,38 +35,40 @@ const ProgramOfPerfomances: FC = () => {
 						))}
 					</Tab.List>
 					<Tab.Panels>
-						{Object.values(ProgramOfPerfomances.table).map((panelText, idx) => (
-							<Tab.Panel key={idx} className='shadow-lg '>
-								<Transition
-									appear
-									show={tabIndex == idx}
-									enter='transition-opacity duration-500'
-									enterFrom='opacity-0'
-									enterTo='opacity-100'
-									leave='transition-opacity duration-500'
-									leaveFrom='opacity-100'
-									leaveTo='opacity-0'
-								>
-									<MotionTabPanel
-										key={idx}
-										panelText={panelText}
-										thead={ProgramOfPerfomances.thead}
-									/>
-								</Transition>
-							</Tab.Panel>
-						))}
+						{ProgramOfPerfomances.bTabs.map((tabBody, idx) => {
+							if (tabBody.type === 'table') {
+								return (
+									<Tab.Panel key={idx} className='shadow-lg '>
+										<Transition
+											appear
+											show={tabIndex == idx}
+											enter='transition-opacity duration-500'
+											enterFrom='opacity-0'
+											enterTo='opacity-100'
+											leave='transition-opacity duration-500'
+											leaveFrom='opacity-100'
+											leaveTo='opacity-0'
+										>
+											<Tab.Panel
+												as={motion.div}
+												variants={variants}
+												initial='hidden'
+												animate='visible'
+												exit='hidden'
+												static
+											>
+												<CustomTable tableContent={tabBody as any} />
+											</Tab.Panel>
+										</Transition>
+									</Tab.Panel>
+								)
+							}
+						})}
 					</Tab.Panels>
 				</Tab.Group>
 			</div>
 		</>
 	)
 }
-// {Object.values(panelTexts).map((panelText, i) => {
-// 	return (
-// 		selectedIndex === i && (
-// 			<MotionTabPanel key={i} panelText={panelText} />
-// 			)
-// 			)
-// })}
 
 export default ProgramOfPerfomances

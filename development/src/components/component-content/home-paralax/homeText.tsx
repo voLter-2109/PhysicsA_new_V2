@@ -1,11 +1,7 @@
 import { FC, useContext } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
-import { MainContext } from '../../../providers/text-provider'
-import Heading from '../../../ui/heading/heading'
 
 const HomeText: FC = () => {
-	const test = useContext(MainContext)
-	console.log(test)
 	const { HomeText } = useContext(TextContext)
 	return (
 		<>
@@ -17,13 +13,13 @@ const HomeText: FC = () => {
 				justify-around text-bg-dark-bu flex-col lg:flex-row dark:shadow-bg-black 
 				 py-4'
 			>
-				<Heading
-					className='font-extrabold  dark:text-bg-dark-bu
+				<div
+					className='font-extrabold text-[60px] dark:text-bg-dark-bu
 					text-colors-light-dark/100  text-center pb-10 opacity-1'
 				>
-					{HomeText.title} <br />
-					{HomeText.title_two}
-				</Heading>
+					<p>{HomeText.title}</p>
+					<p>{HomeText.title_two}</p>
+				</div>
 				<div className='dark:w-fit text-center font-medium [&>p]:text-[20px] dark:text-bg-dark-bu text-colors-light-dark/100'>
 					<p>{HomeText.subtitle}</p>
 					<p>{HomeText.subtitle_two}</p>

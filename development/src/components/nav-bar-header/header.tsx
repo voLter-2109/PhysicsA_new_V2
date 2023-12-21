@@ -4,29 +4,26 @@ import cn from 'clsx'
 import { FC, useContext, useEffect } from 'react'
 import { useOutside } from '../../hooks/useOutside'
 import { useWindowSize } from '../../hooks/useResize'
-import { TNavBarText } from '../../type/text-page-type'
+import { TextContext } from '../../pages/home/home-page'
 import InformationComponent from '../../ui/header-ui/information'
 import LangSwitch from '../../ui/header-ui/lang-switch'
 import ListGroupMenu from '../../ui/header-ui/list-group-menu'
 import ThemeSwitcher from '../../ui/header-ui/theme-switch'
 import IconBurger from '../../ui/ui-burger-menu/iconBurger'
-import { TextContext } from '../../pages/home/home-page'
 
 type Props = {
 	activePage: number
 }
 
 const Header: FC<Props> = ({ activePage }) => {
-	const { isScreenLg, isScreenXl } = useWindowSize()
+	const { width, isScreenXl } = useWindowSize()
 	const { isShow, setIsShow, ref } = useOutside(false)
 
-const {NavBarText} = useContext(TextContext)
+	const { NavBarText } = useContext(TextContext)
 
 	useEffect(() => {
-		if (isScreenLg) {
-			setIsShow(false)
-		}
-	}, [isScreenLg])
+		setIsShow(false)
+	}, [width])
 
 	return (
 		<>

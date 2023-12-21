@@ -1,40 +1,43 @@
 import { Tab, Transition } from '@headlessui/react'
 import cn from 'clsx'
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
+import { TextContext } from '../../../pages/home/home-page'
 import ExternalLinks from '../../../ui/external-links/externalLinks'
 import Heading from '../../../ui/heading/heading'
 import formatterRU from '../../../utils/formatterRU'
 
 const OrganizationFree: FC = () => {
 	const [tabIndex, setTabIndex] = useState(0)
+	const { OrganizationFree } = useContext(TextContext)
+	console.log(OrganizationFree)
 	return (
 		<div className='[&>div]:mb-10'>
-			<Heading>Организационный взнос</Heading>
+			<Heading>{OrganizationFree.head}</Heading>
 
 			<div>
-				<Heading className='text-xl'>Стоимость участия:</Heading>
+				<Heading className='text-xl'>{OrganizationFree.table.header}</Heading>
 				<table className='w-full border-separate border-spacing-y-2  border-spacing-x-1 table-auto text-center '>
 					<thead>
 						<tr className='[&>th]:border-b [&>th]:border-b-bg-light-bu dark:[&>th]:border-bg-dark-bu'>
-							<th></th>
-							<th>до 2 сентября</th>
-							<th>до 18 октября</th>
-							<th>после 18 октября </th>
+							{OrganizationFree.table.thead.map((item, i) => {
+								return <th key={i}>{item}</th>
+							})}
 						</tr>
 					</thead>
 					<tbody className=''>
-						<tr className=''>
-							<td>Размер оргвзноса </td>
-							<td>{formatterRU.format(10000)}</td>
-							<td>{formatterRU.format(13000)}</td>
-							<td>{formatterRU.format(15000)}</td>
-						</tr>
-						<tr>
-							<td>Оплата банковской картой </td>
-							<td>{formatterRU.format(10500)}</td>
-							<td>{formatterRU.format(13650)}</td>
-							<td>{formatterRU.format(15750)}</td>
-						</tr>
+						{OrganizationFree.table.tbody.map((item, i) => {
+							return (
+								<tr key={i}>
+									{item.map((item, i) => {
+										if (!isNaN(Number(item))) {
+											return <td key={i}> {formatterRU.format(+item)} </td>
+										}
+
+										return <td key={i}>{item}</td>
+									})}
+								</tr>
+							)
+						})}
 					</tbody>
 				</table>
 			</div>
@@ -80,32 +83,62 @@ const OrganizationFree: FC = () => {
 			</div>
 
 			<ol className='list-disc'>
-				<li>
-					Оплата организационного взноса за участие в конференции осуществляется
-					по безналичному расчету через Общество с ограниченной ответственностью
-					«Центр межрегионального инновационного развития» (ООО «ИННО-МИР»)
-				</li>
-				<li>
-					Все платежи обрабатываются в течение 5 рабочих дней. То есть статус
-					платежа в ЛК обновляется в течение 5 дней. Не присылайте нам квитанции
-					о платежах. Оргкомитет их проверить не может. Пожалуйста, задавайте
-					вопросы о ваших платежах компании{' '}
-					<ExternalLinks type={'mailto'} linkText='physica.spb@inno-mir.com' />
-				</li>
-				<li>
-					<strong>
-						По всем вопросам, возникшим с заполнением документов, оплатой
-						организационного взноса и другими финансовыми вопросами, пожалуйста,
-						обращайтесь к Землянской Ирине по электронной почте
-						<ExternalLinks
-							type={'mailto'}
-							linkText='physica.spb@inno-mir.com'
-						/>
-						, или по телефону{' '}
-						<ExternalLinks type={'tel'} linkText='+7 (911) 840-53-48' /> (с
-						12.00 до 17.00 – время Московское).
-					</strong>
-				</li>
+				{OrganizationFree.list.map((item, i) => {
+					return (
+						<li>
+							{item.map((item, i) => {
+								if (item.tag === 'span') {
+									return (
+										<span key={i}>
+											{item.text}
+											{item.enter && (
+												<>
+													<br />
+													<br />
+												</>
+											)}
+										</span>
+									)
+								}
+								if (item.tag === 'strong') {
+									return (
+										<strong key={i}>
+											{item.text}
+											{item.enter && (
+												<>
+													<br />
+													<br />
+												</>
+											)}
+										</strong>
+									)
+								}
+
+								if (item.tag === 'link') {
+									return (
+										<>
+											<ExternalLinks
+												key={i}
+												//@ts-ignore
+												linkText={item.typeLink}
+												//@ts-ignore
+												type={item.type}
+												text={item.text}
+											/>
+											{item.enter && (
+												<>
+													<br />
+													<br />
+												</>
+											)}
+										</>
+									)
+								}
+							})}
+						</li>
+					)
+				})}
+			
 			</ol>
 		</div>
 	)

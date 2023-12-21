@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, createContext, useCallback, useContext, useState } from 'react'
+import { FC, createContext, useCallback, useState } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import PageContainer from '../../ui/page-container/page-container'
 
@@ -12,7 +12,6 @@ import Publications from '../../components/component-content/publications/public
 import Error from '../../components/error/error'
 import Footer from '../../components/footer/footer'
 import Header from '../../components/nav-bar-header/header'
-import { MainContext } from '../../providers/text-provider'
 import { TLandingPage } from '../../type/text-page-type'
 
 // import dynamic from 'next/dynamic'
@@ -68,8 +67,8 @@ type Props = {
 export const TextContext = createContext({} as TLandingPage)
 
 const HomePage: FC<Props> = ({ landingPage }) => {
-	
 	const [activePage, setActivePage] = useState<number>(1)
+
 	const onChangeActivePage = useCallback(
 		(inView: boolean, entry: IntersectionObserverEntry, id: number) => {
 			if (id && inView) setActivePage(+id)
@@ -77,12 +76,19 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 		[]
 	)
 
+	// useWhyDidYouUpdate('useWhyDidYouUpdateComponent', {
+	// 	landingPage,
+	// 	activePage,
+	// 	onChangeActivePage,
+	// 	TextContext
+	// })
+
 	return (
 		<>
 			<TextContext.Provider value={landingPage}>
 				<div className='flex flex-col'>
 					<Header activePage={activePage} />
-
+					{/* //!база и компоненты готовы */}
 					<PageContainer
 						onChangeActivePage={onChangeActivePage}
 						id='1'
@@ -95,6 +101,7 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 							backgroundSize: 'cover'
 						}}
 					>
+						{/* //!база и компоненты готовы */}
 						<ErrorBoundary fallback={<Error />}>
 							<HomeText />
 						</ErrorBoundary>
@@ -105,13 +112,14 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 							<AboutUs />
 						</ErrorBoundary>
 					</PageContainer>
-					{/* //! */}
+					{/* //!база и компоненты готовы */}
 					<PageContainer onChangeActivePage={onChangeActivePage} id='3'>
 						<ErrorBoundary fallback={<Error />}>
 							<DynamicProgramOfPerfomances />
 						</ErrorBoundary>
 					</PageContainer>
 
+					{/* //!база и компоненты готовы */}
 					<PageContainer onChangeActivePage={onChangeActivePage} id='4'>
 						<ErrorBoundary fallback={<Error />}>
 							<DynamicSwiperComponent />
@@ -127,7 +135,7 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 							<YMaps
 								query={{
 									apikey: process.env.YANDEX_API_KEY,
-									lang: 'ru_RU',
+									lang: 'en_RU',
 									load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl'
 								}}
 							>
@@ -156,11 +164,3 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 }
 
 export default HomePage
-
-// onChangeActivePage={onChangeActivePage}
-// onChangeActivePage={onChangeActivePage}
-// onChangeActivePage={onChangeActivePage}
-// onChangeActivePage={onChangeActivePage}
-// onChangeActivePage={onChangeActivePage}
-// onChangeActivePage={onChangeActivePage}
-// onChangeActivePage={onChangeActivePage}

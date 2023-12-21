@@ -1,8 +1,13 @@
 import { useState } from 'react'
 // import { RiArrowDropDownLine } from 'react-icons/ri'
 import AccordionItem from './accordionItem'
-import { TDataAccordion } from './textAccordion'
+
 //  accordionitem component
+
+export type TDataAccordion = {
+	name: string
+	list: string[]
+}
 
 const Accordion = ({
 	data,

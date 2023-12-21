@@ -2,8 +2,7 @@ import { Tab, Transition } from '@headlessui/react'
 import cn from 'clsx'
 import { useContext, useState } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
-import Accordion from '../../../ui/accordion/accordion'
-import { textAccordionLocationSection } from '../../../ui/accordion/textAccordion'
+import Accordion, { TDataAccordion } from '../../../ui/accordion/accordion'
 import CustomMap from '../../../ui/custom-map/customMap'
 import Heading from '../../../ui/heading/heading'
 
@@ -13,7 +12,7 @@ const LocationSection = () => {
 
 	return (
 		<div className='w-full'>
-			<Heading>{LocationSection.heading}</Heading>
+			<Heading>{LocationSection.head}</Heading>
 			<Tab.Group selectedIndex={tabIndex} onChange={setTabIndex}>
 				<Tab.List className='flex space-x-1 rounded-xl p-1'>
 					{LocationSection.hTabs.map((tab, index) => {
@@ -47,10 +46,10 @@ const LocationSection = () => {
 							leaveTo='opacity-0'
 						>
 							<Heading className='text-lg'>
-								<strong>{LocationSection.bTabs[0].site}</strong> <br />
-								{LocationSection.bTabs[0].adress}
+								<strong>{LocationSection.bTabs[0].head?.site}</strong> <br />
+								{LocationSection.bTabs[0].head?.adress}
 							</Heading>
-							<CustomMap initialMap={LocationSection.map} />
+							<CustomMap initialMap={LocationSection.bTabs[0].map} />
 						</Transition>
 					</Tab.Panel>
 					<Tab.Panel className='shadow-lg '>
@@ -64,7 +63,10 @@ const LocationSection = () => {
 							leaveFrom='opacity-100'
 							leaveTo='opacity-0'
 						>
-							<Accordion data={textAccordionLocationSection} activeIn={2} />
+							<Accordion
+								data={LocationSection.bTabs[1].listContent as any}
+								activeIn={2}
+							/>
 						</Transition>
 					</Tab.Panel>
 				</Tab.Panels>
