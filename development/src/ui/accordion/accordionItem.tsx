@@ -1,6 +1,7 @@
 import { ChevronDoubleDownIcon } from '@heroicons/react/20/solid'
 import cn from 'clsx'
 import { MouseEventHandler, useRef } from 'react'
+import { ListCom } from '../../components/component-content/organizational-fee/organizationFree'
 import { TDataAccordion } from './accordion'
 
 const AccordionItem = ({
@@ -12,6 +13,7 @@ const AccordionItem = ({
 	isOpen: boolean
 	onClick: MouseEventHandler<HTMLButtonElement>
 }) => {
+	// console.log(data)
 	const contentHeight = useRef<HTMLDivElement>(null)
 	return (
 		<div className='w-full mb-1 '>
@@ -41,14 +43,11 @@ const AccordionItem = ({
 				}
 			>
 				<ul>
-					{data.list.map((item, i) => (
-						<li
-							className='rounded-md my-1 border-l-2 dark:border-bg-dark-bu border-bg-light-bu/[0.7]'
-							key={i}
-						>
-							{item}
-						</li>
-					))}
+					{data.list.map((item, i) => {
+						console.log(item)
+
+						return <ListCom item={item} key={i} />
+					})}
 				</ul>
 			</div>
 		</div>
@@ -56,3 +55,5 @@ const AccordionItem = ({
 }
 
 export default AccordionItem
+
+

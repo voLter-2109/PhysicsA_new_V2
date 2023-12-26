@@ -2,7 +2,7 @@ import { Tab, Transition } from '@headlessui/react'
 import cn from 'clsx'
 import { useContext, useState } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
-import Accordion, { TDataAccordion } from '../../../ui/accordion/accordion'
+import Accordion from '../../../ui/accordion/accordion'
 import CustomMap from '../../../ui/custom-map/customMap'
 import Heading from '../../../ui/heading/heading'
 
@@ -63,10 +63,12 @@ const LocationSection = () => {
 							leaveFrom='opacity-100'
 							leaveTo='opacity-0'
 						>
-							<Accordion
-								data={LocationSection.bTabs[1].listContent as any}
-								activeIn={2}
-							/>
+							{LocationSection.bTabs[1].listContent && (
+								<Accordion
+									data={LocationSection.bTabs[1].listContent}
+									activeIn={2}
+								/>
+							)}
 						</Transition>
 					</Tab.Panel>
 				</Tab.Panels>

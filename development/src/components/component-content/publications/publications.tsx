@@ -1,51 +1,23 @@
 import { FC, useContext } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
-import ExternalLinks from '../../../ui/external-links/externalLinks'
 import Heading from '../../../ui/heading/heading'
+import { ListCom, TextContent } from '../organizational-fee/organizationFree'
 
 const Publications: FC = () => {
 	const { Publications } = useContext(TextContext)
 	return (
 		<>
 			<Heading className=''>{Publications.head}</Heading>
-			{Publications.text.map((item, i) => {
-				if (item.tag === 'span') {
-					return (
-						<span key={i}>
-							{item.text}
-							{item.enter && (
-								<>
-									<br />
-									<br />
-								</>
-							)}
-						</span>
-					)
-				}
 
-				if (item.tag === 'link') {
-					return (
-						<ExternalLinks
-							key={i}
-							//@ts-ignore
-							linkText={item.typeLink}
-							//@ts-ignore
-							type={item.type}
-							text={item.text}
-						/>
-					)
-				}
+			{Publications.text.map((item, i) => {
+				return <TextContent item={item} key={i} />
 			})}
-			<ol className='list-disc'>
-				{Publications.list.map((item, i) => (
-					<li
-						className=''
-						key={i}
-					>
-						{item}
-					</li>
-				))}
-			</ol>
+
+			<ul>
+				{Publications.list.map((item, i) => {
+					return <ListCom item={item} key={i} />
+				})}
+			</ul>
 		</>
 	)
 }

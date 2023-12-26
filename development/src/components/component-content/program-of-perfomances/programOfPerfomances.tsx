@@ -3,9 +3,9 @@ import cn from 'clsx'
 import { motion } from 'framer-motion'
 import { FC, useContext, useState } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
-import CustomTable from '../../../ui/custom-table/customTable'
 import Heading from '../../../ui/heading/heading'
 import { variants } from '../../../utils/animateTabs'
+import { TableCom } from '../organizational-fee/organizationFree'
 
 const ProgramOfPerfomances: FC = () => {
 	const { ProgramOfPerfomances } = useContext(TextContext)
@@ -36,33 +36,32 @@ const ProgramOfPerfomances: FC = () => {
 					</Tab.List>
 					<Tab.Panels>
 						{ProgramOfPerfomances.bTabs.map((tabBody, idx) => {
-							if (tabBody.type === 'table') {
-								return (
-									<Tab.Panel key={idx} className='shadow-lg '>
-										<Transition
-											appear
-											show={tabIndex == idx}
-											enter='transition-opacity duration-500'
-											enterFrom='opacity-0'
-											enterTo='opacity-100'
-											leave='transition-opacity duration-500'
-											leaveFrom='opacity-100'
-											leaveTo='opacity-0'
+							return (
+								<Tab.Panel key={idx} className='shadow-lg '>
+									<Transition
+										appear
+										show={tabIndex == idx}
+										enter='transition-opacity duration-500'
+										enterFrom='opacity-0'
+										enterTo='opacity-100'
+										leave='transition-opacity duration-500'
+										leaveFrom='opacity-100'
+										leaveTo='opacity-0'
+									>
+										<Tab.Panel
+											as={motion.div}
+											variants={variants}
+											initial='hidden'
+											animate='visible'
+											exit='hidden'
+											static
 										>
-											<Tab.Panel
-												as={motion.div}
-												variants={variants}
-												initial='hidden'
-												animate='visible'
-												exit='hidden'
-												static
-											>
-												<CustomTable tableContent={tabBody as any} />
-											</Tab.Panel>
-										</Transition>
-									</Tab.Panel>
-								)
-							}
+											<TableCom table={tabBody} />
+											
+										</Tab.Panel>
+									</Transition>
+								</Tab.Panel>
+							)
 						})}
 					</Tab.Panels>
 				</Tab.Group>

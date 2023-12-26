@@ -1,13 +1,20 @@
 import { useState } from 'react'
 // import { RiArrowDropDownLine } from 'react-icons/ri'
+import { PropsListCom } from '../../components/component-content/organizational-fee/organizationFree'
 import AccordionItem from './accordionItem'
 
 //  accordionitem component
 
 export type TDataAccordion = {
-	name: string
-	list: string[]
+    name: string;
+    list: {
+        type: string;
+        enter: boolean;
+        text: string;
+        style: string;
+    }[][];
 }
+
 
 const Accordion = ({
 	data,
@@ -17,7 +24,7 @@ const Accordion = ({
 	activeIn: number
 }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(activeIn)
-
+	// console.log(data)
 	const handleItemClick = (index: number) => {
 		setActiveIndex(prevIndex => (prevIndex === index ? null : index))
 	}

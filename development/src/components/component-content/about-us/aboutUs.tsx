@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
 import Heading from '../../../ui/heading/heading'
-import AboutUsText from './aboutUsText'
+import { TextContent } from '../organizational-fee/organizationFree'
 
 const AboutUs: FC = () => {
 	const { AboutUs } = useContext(TextContext)
@@ -11,7 +11,10 @@ const AboutUs: FC = () => {
 			<div>
 				<Heading className=''>{AboutUs.head}</Heading>
 				<div className='[&>p]:indent-4 [&>p]:mb-3 pb-5'>
-					<AboutUsText aboutUsText={AboutUs.text} />
+					{AboutUs.text.map((item, i) => {
+						return <TextContent item={item} key={i} />
+					})}
+					
 				</div>
 			</div>
 		</div>

@@ -63,10 +63,6 @@ export default function SwiperComponent() {
 	const swiperRef = useRef<any>(null)
 	const { isScreenSm, isScreenLg } = useWindowSize()
 
-	useEffect(() => {
-		console.log('render')
-	}, [])
-
 	return (
 		<div className='flex flex-col gap-2 '>
 			<Swiper

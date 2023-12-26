@@ -14,10 +14,11 @@ type TExternalLinks = {
 	type: keyof typeof EType
 	className?: string
 	text?: string
+	enter: boolean
 }
-console.log(typeof EType)
 
 const ExternalLinks: FC<TExternalLinks> = ({
+	enter,
 	linkText,
 	text = linkText,
 	type,
@@ -28,31 +29,55 @@ const ExternalLinks: FC<TExternalLinks> = ({
 
 	if (type === EType.mailto)
 		return (
-			<a
-				className={cn(initialClassName, className)}
-				href={`${EType.mailto}:${linkText}`}
-			>
-				{text}
-			</a>
+			<>
+				<a
+					className={cn(initialClassName, className)}
+					href={`${EType.mailto}:${linkText}`}
+				>
+					{text}
+				</a>
+				{enter && (
+					<>
+						<br />
+						<br />
+					</>
+				)}
+			</>
 		)
 	if (type === EType.tel)
 		return (
-			<a
-				className={cn(initialClassName, className)}
-				href={`${EType.tel}:${linkText}`}
-			>
-				{text}
-			</a>
+			<>
+				<a
+					className={cn(initialClassName, className)}
+					href={`${EType.tel}:${linkText}`}
+				>
+					{text}
+				</a>
+				{enter && (
+					<>
+						<br />
+						<br />
+					</>
+				)}
+			</>
 		)
 
 	return (
-		<a
-			target='_blank'
-			className={cn(initialClassName, className)}
-			href={linkText}
-		>
-			{text}
-		</a>
+		<>
+			<a
+				target='_blank'
+				className={cn(initialClassName, className)}
+				href={linkText}
+			>
+				{text}
+			</a>
+			{enter && (
+				<>
+					<br />
+					<br />
+				</>
+			)}
+		</>
 	)
 }
 
