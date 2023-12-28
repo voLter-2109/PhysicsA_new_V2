@@ -27,12 +27,18 @@ module.exports = {
 	],
 	theme: {
 		colors,
+		extend: {
+			fontFamily: {
+				sans: ['var(--font-roboto-mono)'],
+				bree: ['var(--font-bree-serif)'],
+				mystero: ['var(--font-mystero-mono)']
+			}
+		},
 		export: {
-			fontFamily: { mono: ['var(--font-roboto-mono)'] },
 			backgroundImage: {
 				'home-black': 'url(./bg-par-black.jpg)',
 				'home-light': "url('/bg-par-light.jpg')"
-			},
+			}
 		},
 		extends: {}
 	},

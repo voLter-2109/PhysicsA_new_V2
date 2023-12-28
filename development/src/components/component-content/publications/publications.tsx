@@ -1,7 +1,8 @@
 import { FC, useContext } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
+import { ListCom } from '../../../ui/custom-list/customList'
+import { TextContent } from '../../../ui/custom-text-component/customText'
 import Heading from '../../../ui/heading/heading'
-import { ListCom, TextContent } from '../organizational-fee/organizationFree'
 
 const Publications: FC = () => {
 	const { Publications } = useContext(TextContext)

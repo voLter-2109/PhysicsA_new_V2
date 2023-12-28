@@ -1,7 +1,7 @@
 import { ChevronDoubleDownIcon } from '@heroicons/react/20/solid'
 import cn from 'clsx'
 import { MouseEventHandler, useRef } from 'react'
-import { ListCom } from '../../components/component-content/organizational-fee/organizationFree'
+import { ListCom } from '../custom-list/customList'
 import { TDataAccordion } from './accordion'
 
 const AccordionItem = ({
@@ -44,7 +44,7 @@ const AccordionItem = ({
 			>
 				<ul className='p-2 '>
 					{data.list.map((item, i) => {
-						console.log(item)
+						// console.log(item)
 
 						return <ListCom item={item} key={i} />
 					})}
@@ -55,5 +55,3 @@ const AccordionItem = ({
 }
 
 export default AccordionItem
-
-

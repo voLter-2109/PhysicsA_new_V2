@@ -3,9 +3,9 @@ import cn from 'clsx'
 import { motion } from 'framer-motion'
 import { FC, useContext, useState } from 'react'
 import { TextContext } from '../../../pages/home/home-page'
+import { TableCom } from '../../../ui/custom-table/customTable'
 import Heading from '../../../ui/heading/heading'
 import { variants } from '../../../utils/animateTabs'
-import { TableCom } from '../organizational-fee/organizationFree'
 
 const ProgramOfPerfomances: FC = () => {
 	const { ProgramOfPerfomances } = useContext(TextContext)
@@ -57,7 +57,6 @@ const ProgramOfPerfomances: FC = () => {
 											static
 										>
 											<TableCom table={tabBody} />
-											
 										</Tab.Panel>
 									</Transition>
 								</Tab.Panel>

@@ -1,15 +1,15 @@
 {
-	"lang": "ru",
-	"lang_map": "ru_RU",
+	"lang": "en",
+	"lang_map": "en_RU",
 	"landingPage": {
 		"NavBarText": [
-			"RUHomeru",
-			"RUabout usru",
-			"RUПрограммаru",
-			"RUФотоru",
-			"RUШколаru",
-			"RUОргВзносru",
-			"RUПубликацииru"
+			"RUHome",
+			"RUabout us",
+			"RUПрограмма",
+			"RUФото",
+			"RUШкола",
+			"RUОргВзнос",
+			"RUПубликации"
 		],
 		"HomeText": {
 			"title": "PhysicsA",
@@ -18,12 +18,12 @@
 			"subtitle_two": "23-27 октября, 2023"
 		},
 		"AboutUs": {
-			"head": "RUО конференции",
+			"head": "RU_О конференции",
 			"text": [
 				{
 					"type": "span",
 					"enter": true,
-					"text": "Международная конференция ФизикА.СПб проводится в Санкт-Петербурге с середины 90-х. В последние годы Конференция собирает около 400 участников из различных регионов России, ближнего и дальнего зарубежья. В ней традиционно принимают участие ученые высших учебных заведений и научных организаций, а также студенты и аспиранты, ведущие исследования в различных областях физики и астрономии.",
+					"text": "qwewerQWEWERМеждународная конференция ФизикА.СПб проводится в Санкт-Петербурге с середины 90-х. В последние годы Конференция собирает около 400 участников из различных регионов России, ближнего и дальнего зарубежья. В ней традиционно принимают участие ученые высших учебных заведений и научных организаций, а также студенты и аспиранты, ведущие исследования в различных областях физики и астрономии.",
 					"style": ""
 				},
 				{
@@ -32,10 +32,11 @@
 					"text": "Основными целями Конференции является развитие регионального и международного научного сотрудничества, создание условий для обмена идеями и результатами исследований, систематизация актуальных проблем, выявление тенденций развития научных исследований, а также публикация работ, прошедших рецензирование, в международной научной печати. С 2012 до 2022 года расширенные тезисы докладов конференции ФизикА.СПб на английском языке издавались в журнале Journal of Physics: Conference Series (IOP Publishing). С 2023 года расширенные тезисы докладов конференции ФизикА.СПб в формате полноценных статей объемом до 6 страниц после прохождения стандартной процедуры рецензирования будут изданы в специальных выпусках журналов,",
 					"style": ""
 				},
+
 				{
-					"tag": "link",
-					"type": "text",
-					"typeLink": "https://journals.ioffe.ru/",
+					"type": "link",
+					"typeHref": "text",
+					"hrefLink": "https://journals.ioffe.ru/",
 					"text": " издаваемых ФТИ им. А.Ф. Иоффе",
 					"enter": false,
 					"style": ""
@@ -55,7 +56,7 @@
 			]
 		},
 		"ProgramOfPerfomances": {
-			"head": "RUПрограмма",
+			"head": "RU_Программа",
 			"hTabs": ["23ru", "24ru", "25ru"],
 			"bTabs": [
 				{
@@ -150,9 +151,9 @@
 				}
 			]
 		},
-		"SwiperComponent": { "head": "фото отчет" },
+		"SwiperComponent": { "head": "RU_Фото" },
 		"LocationSection": {
-			"head": "RUПрограмма",
+			"head": "RU_Программа",
 			"hTabs": ["адрес", "секции"],
 			"bTabs": [
 				{
@@ -240,7 +241,7 @@
 			]
 		},
 		"OrganizationFree": {
-			"head": "RUОрганизационный взнос",
+			"head": "RU_Организационный взнос",
 			"table": {
 				"head": "Стоимость участия:",
 				"thead": ["", "до 2 сентября", "до 18 октября", "после 18 октября"],
@@ -272,9 +273,9 @@
 						"style": ""
 					},
 					{
-						"tag": "link",
-						"type": "mailto",
-						"typeLink": "physica.spb@inno-mir.com",
+						"type": "link",
+						"typeHref": "mailto",
+						"hrefLink": "physica.spb@inno-mir.com",
 						"text": "physica.spb@inno-mir.com",
 						"enter": false,
 						"style": ""
@@ -288,9 +289,9 @@
 						"style": ""
 					},
 					{
-						"tag": "link",
-						"type": "mailto",
-						"typeLink": "physica.spb@inno-mir.com",
+						"type": "link",
+						"typeHref": "mailto",
+						"hrefLink": "physica.spb@inno-mir.com",
 						"text": "physica.spb@inno-mir.com",
 						"enter": false,
 						"style": ""
@@ -302,9 +303,9 @@
 						"style": ""
 					},
 					{
-						"tag": "link",
-						"type": "mailto",
-						"typeLink": "+7 (911) 840-53-48",
+						"type": "link",
+						"typeHref": "tel",
+						"hrefLink": "+7 (911) 840-53-48",
 						"text": "+7 (911) 840-53-48",
 						"enter": false,
 						"style": ""
@@ -332,10 +333,10 @@
 						"style": ""
 					},
 					{
-						"tag": "link",
-						"type": "maito",
-						"typeLink": " physica.spb@inno-mir.com ",
-						"text": " physica.spb@inno-mir.com .",
+						"type": "link",
+						"typeHref": "mailto",
+						"hrefLink": "physica.spb@inno-mir.com",
+						"text": "physica.spb@inno-mir.com",
 						"enter": false,
 						"style": ""
 					},
@@ -366,9 +367,9 @@
 						"style": ""
 					},
 					{
-						"tag": "link",
-						"type": "maito",
-						"typeLink": "physica.spb@inno-mir.com",
+						"type": "link",
+						"typeHref": "mailto",
+						"hrefLink": "physica.spb@inno-mir.com",
 						"text": "physica.spb@inno-mir.com",
 						"enter": false,
 						"style": ""
@@ -416,10 +417,10 @@
 						"style": ""
 					},
 					{
-						"tag": "link",
-						"type": "maito",
-						"typeLink": "physica.spb@inno-mir.com",
-						"text": " physica.spb@inno-mir.com ",
+						"type": "link",
+						"typeHref": "mailto",
+						"hrefLink": "physica.spb@inno-mir.com",
+						"text": "physica.spb@inno-mir.com",
 						"enter": true,
 						"style": ""
 					},
@@ -438,9 +439,9 @@
 						"style": ""
 					},
 					{
-						"tag": "link",
-						"type": "maito",
-						"typeLink": "physica.spb@inno-mir.com",
+						"type": "link",
+						"typeHref": "mailto",
+						"hrefLink": "physica.spb@inno-mir.com",
 						"text": "physica.spb@inno-mir.com",
 						"enter": false,
 						"style": ""
@@ -509,7 +510,7 @@
 			]
 		},
 		"Publications": {
-			"head": "RUПубликации",
+			"head": "RU_Публикации",
 			"text": [
 				{
 					"type": "span",
@@ -518,9 +519,9 @@
 					"style": ""
 				},
 				{
-					"tag": "link",
-					"type": "text",
-					"typeLink": "https://journals.ioffe.ru/",
+					"type": "link",
+					"typeHref": "text",
+					"hrefLink": "https://journals.ioffe.ru/",
 					"text": " издаваемых ФТИ им. А.Ф. Иоффе",
 					"enter": false,
 					"style": ""

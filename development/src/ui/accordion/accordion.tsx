@@ -1,20 +1,17 @@
 import { useState } from 'react'
-// import { RiArrowDropDownLine } from 'react-icons/ri'
-import { PropsListCom } from '../../components/component-content/organizational-fee/organizationFree'
 import AccordionItem from './accordionItem'
 
 //  accordionitem component
 
 export type TDataAccordion = {
-    name: string;
-    list: {
-        type: string;
-        enter: boolean;
-        text: string;
-        style: string;
-    }[][];
+	name: string
+	list: {
+		type: string
+		enter: boolean
+		text: string
+		style: string
+	}[][]
 }
-
 
 const Accordion = ({
 	data,

@@ -10,8 +10,8 @@ enum EType {
 type LogLevelStrings = typeof EType
 
 type TExternalLinks = {
-	linkText: string
-	type: keyof typeof EType
+	hrefLink: string
+	typeHref: keyof typeof EType
 	className?: string
 	text?: string
 	enter: boolean
@@ -19,46 +19,43 @@ type TExternalLinks = {
 
 const ExternalLinks: FC<TExternalLinks> = ({
 	enter,
-	linkText,
-	text = linkText,
-	type,
+	hrefLink,
+	text = hrefLink,
+	typeHref,
 	className
 }) => {
 	const initialClassName =
-		'font-medium text-colors-light-dark dark:text-bg-dark-bu border-b border-bg-light-bu dark:border-bg-dark-bu hover:text-bg-light-bu dark:hover:text-colors-dark-dark'
+		'font-medium cursor-pointer text-colors-light-dark dark:text-bg-dark-bu border-b border-bg-light-bu dark:border-bg-dark-bu hover:text-bg-light-bu dark:hover:text-colors-dark-dark'
 
-	if (type === EType.mailto)
+	const EnterCom = (
+		<>
+			<br />
+			<br />
+		</>
+	)
+
+	if (typeHref === EType.mailto)
 		return (
 			<>
 				<a
 					className={cn(initialClassName, className)}
-					href={`${EType.mailto}:${linkText}`}
+					href={`${EType.mailto}:${hrefLink}`}
 				>
 					{text}
 				</a>
-				{enter && (
-					<>
-						<br />
-						<br />
-					</>
-				)}
+				{enter && EnterCom}
 			</>
 		)
-	if (type === EType.tel)
+	if (typeHref === EType.tel)
 		return (
 			<>
 				<a
 					className={cn(initialClassName, className)}
-					href={`${EType.tel}:${linkText}`}
+					href={`${EType.tel}:${hrefLink}`}
 				>
 					{text}
 				</a>
-				{enter && (
-					<>
-						<br />
-						<br />
-					</>
-				)}
+				{enter && EnterCom}
 			</>
 		)
 
@@ -67,16 +64,11 @@ const ExternalLinks: FC<TExternalLinks> = ({
 			<a
 				target='_blank'
 				className={cn(initialClassName, className)}
-				href={linkText}
+				href={hrefLink}
 			>
 				{text}
 			</a>
-			{enter && (
-				<>
-					<br />
-					<br />
-				</>
-			)}
+			{enter && EnterCom}
 		</>
 	)
 }

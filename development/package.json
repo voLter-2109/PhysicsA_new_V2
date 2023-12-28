@@ -13,7 +13,6 @@
     "@formatjs/intl-localematcher": "^0.5.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
-    "@next/font": "^14.0.3",
     "@pbe/react-yandex-maps": "^1.2.5",
     "@types/negotiator": "^0.6.3",
     "ahooks": "^3.7.8",

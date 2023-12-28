@@ -1,13 +1,5 @@
-import { useContext } from 'react'
-import { useWindowSize } from '../../../hooks/useResize'
-import { TextContext } from '../../../pages/home/home-page'
-import LangSwitch from '../../../ui/header-ui/lang-switch'
-import ListGroupMenu from '../../../ui/header-ui/list-group-menu'
-import ThemeSwitcher from '../../../ui/header-ui/theme-switch'
 
 const Footer = () => {
-	const { NavBarText } = useContext(TextContext)
-	const { width, isScreenXl } = useWindowSize()
 
 	return (
 		<div
@@ -20,7 +12,6 @@ const Footer = () => {
 			>
 				Physics.SPB
 			</span>
-			
 		</div>
 	)
 }
