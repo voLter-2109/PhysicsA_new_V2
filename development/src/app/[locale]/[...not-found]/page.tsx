@@ -1,9 +1,12 @@
+import { NextPage } from 'next'
 import Link from 'next/link'
 
-export default function NotFound() {
+const Page: NextPage = () => {
 	return (
 		<div>
-			<Link href={'/'} className='z-30 absolute'>home</Link>
+			<Link href={'/'} className='z-30 absolute'>
+				home
+			</Link>
 			<div className='moon'></div>
 			<div className='moon__crater moon__crater1'></div>
 			<div className='moon__crater moon__crater2'></div>
@@ -55,3 +58,5 @@ export default function NotFound() {
 		</div>
 	)
 }
+
+export default Page

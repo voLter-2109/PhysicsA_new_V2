@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import { Roboto_Mono } from 'next/font/google'
-import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { FC, ReactNode } from 'react'
 import { getSiteUrl } from '../../config/url.config'
 import { SITE_NAME, localeConst } from '../../constants/app.constant'
 import { Locale, i18n } from '../../i18n.config'
 import ThemeComponentProvider from '../../providers/theme-provider'
 import './global.css'
+import NotFound from './not-found'
 
 const robotoMono = Roboto_Mono({
 	subsets: ['latin'],
@@ -35,11 +36,24 @@ type Props = {
 }
 
 export async function generateStaticParams() {
+
 	return i18n.locales.map(locale => ({ lang: locale }))
 }
 
 const RootLayout: FC<Props> = async ({ children, params: { locale } }) => {
-	if (!localeConst.includes(locale as any)) notFound()
+	console.log(locale)
+	if (!localeConst.includes(locale as any)) {
+		return (
+			<html>
+				<body id='root'>
+					<>
+						<NotFound />
+						
+					</>
+				</body>
+			</html>
+		)
+	}
 
 	return (
 		<html lang={locale} className={` ${robotoMono.variable} font-sans`}>

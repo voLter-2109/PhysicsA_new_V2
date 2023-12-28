@@ -35,14 +35,14 @@ const AccordionItem = ({
 
 			<div
 				ref={contentHeight}
-				className='overflow-hidden border-bg-black transition-all 0.4s ease'
+				className='overflow-hidden shadow-2xl border-bg-black transition-all 0.4s ease'
 				style={
 					isOpen
 						? { height: contentHeight.current?.scrollHeight }
 						: { height: '0px' }
 				}
 			>
-				<ul>
+				<ul className='p-2 '>
 					{data.list.map((item, i) => {
 						console.log(item)
 

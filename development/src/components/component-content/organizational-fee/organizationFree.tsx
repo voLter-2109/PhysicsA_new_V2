@@ -67,7 +67,7 @@ const OrganizationFree: FC = () => {
 				</Tab.Group>
 			</div>
 
-			<ul >
+			<ul>
 				{OrganizationFree.list.map((item, i) => {
 					return <ListCom key={i} item={item} />
 				})}
@@ -179,14 +179,12 @@ export type PropsListCom = {
 	)[]
 }
 export const ListCom: FC<PropsListCom> = ({ item }) => {
-	console.log(item)
-
 	return (
 		<>
-			<li className='rounded-md my-1 border-l-2 dark:border-bg-dark-bu border-bg-light-bu/[0.7]'>
-				{item.map((item, i) => {
-					return <TextContent key={i} item={item} />
-				})}
+			<li className='my-1 border-l-[1px] mb-2 px-2 dark:border-bg-dark-bu border-bg-light-bu/[0.7] '>
+				{item.map((item, i) => (
+					<TextContent key={i} item={item}/>
+				))}
 			</li>
 		</>
 	)

@@ -2,14 +2,14 @@
 
 import cn from 'clsx'
 import { FC, useContext, useEffect } from 'react'
-import { useOutside } from '../../hooks/useOutside'
-import { useWindowSize } from '../../hooks/useResize'
-import { TextContext } from '../../pages/home/home-page'
-import InformationComponent from '../../ui/header-ui/information'
-import LangSwitch from '../../ui/header-ui/lang-switch'
-import ListGroupMenu from '../../ui/header-ui/list-group-menu'
-import ThemeSwitcher from '../../ui/header-ui/theme-switch'
-import IconBurger from '../../ui/ui-burger-menu/iconBurger'
+import { useOutside } from '../../../hooks/useOutside'
+import { useWindowSize } from '../../../hooks/useResize'
+import { TextContext } from '../../../pages/home/home-page'
+import InformationComponent from '../../../ui/header-ui/information'
+import LangSwitch from '../../../ui/header-ui/lang-switch'
+import ListGroupMenu from '../../../ui/header-ui/list-group-menu'
+import ThemeSwitcher from '../../../ui/header-ui/theme-switch'
+import IconBurger from '../../../ui/ui-burger-menu/iconBurger'
 
 type Props = {
 	activePage: number
@@ -69,8 +69,8 @@ const Header: FC<Props> = ({ activePage }) => {
 					navLink={NavBarText}
 					activePage={activePage}
 					classNames='flex flex-col mt-[15vh] text-center w-fit [&>ul]:flex-col m-auto [&>ul]:text-2xl'
-					classNamesLi='animate__backInLeft [&>li]:mb-5'
 					classNameP=''
+					sideBar={true}
 				/>
 			</div>
 		</>

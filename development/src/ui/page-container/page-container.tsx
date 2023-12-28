@@ -1,5 +1,6 @@
 import cn from 'clsx'
 import { CSSProperties } from 'react'
+import { Fade } from 'react-awesome-reveal'
 import { InView } from 'react-intersection-observer'
 
 type Props = {
@@ -32,17 +33,19 @@ const PageContainer = ({
 			as='div'
 			onChange={(inView, entry) => onChangeActivePage(inView, entry, +id)}
 		>
-			<section
-				id={id}
-				className={cn(
-					' py-10  mb-7 min-h-[70vh] m-auto  shadow-2xl shadow-colors-light-dark/20 rounded-lg scroll-mt-10 ',
-					container ? 'container px-4 sm:px-6 lg:px-8' : '',
-					className
-				)}
-				style={style}
-			>
-				{children}
-			</section>
+			<Fade>
+				<section
+					id={id}
+					className={cn(
+						' py-10  mb-7 min-h-[70vh] m-auto  shadow-2xl shadow-colors-light-dark/20 rounded-lg scroll-mt-10 ',
+						container ? 'container px-4 sm:px-6 lg:px-8' : '',
+						className
+					)}
+					style={style}
+				>
+					{children}
+				</section>
+			</Fade>
 		</InView>
 	)
 }

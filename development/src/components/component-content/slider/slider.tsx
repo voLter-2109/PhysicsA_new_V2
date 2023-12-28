@@ -4,10 +4,12 @@ import {
 	ChevronDoubleLeftIcon,
 	ChevronDoubleRightIcon
 } from '@heroicons/react/20/solid'
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { Autoplay, Navigation, Thumbs } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useWindowSize } from '../../../hooks/useResize'
+import { TextContext } from '../../../pages/home/home-page'
+import Heading from '../../../ui/heading/heading'
 import './style.scss'
 
 const arrFoto = [
@@ -62,9 +64,11 @@ export default function SwiperComponent() {
 	const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
 	const swiperRef = useRef<any>(null)
 	const { isScreenSm, isScreenLg } = useWindowSize()
+	const { SwiperComponent } = useContext(TextContext)
 
 	return (
 		<div className='flex flex-col gap-2 '>
+			<Heading>{SwiperComponent.head}</Heading>
 			<Swiper
 				loop={true}
 				spaceBetween={10}
