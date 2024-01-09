@@ -16,7 +16,7 @@ const OrganizationFree: FC = () => {
 			<Heading>{OrganizationFree.head}</Heading>
 
 			<div>
-				<TableCom table={OrganizationFree.table} />
+				<TableCom scroll table={OrganizationFree.table} />
 			</div>
 
 			<div className=''>
@@ -28,9 +28,9 @@ const OrganizationFree: FC = () => {
 									key={'htab' + i}
 									className={({ selected }) =>
 										cn(
-											'w-full rounded-lg p-2.5 font-extrabold text-lg leading-5 text-bg-light ',
+											'max-md:w-[20%] transition-all duration-500 overflow-hidden rounded-lg p-2.5 font-bold text-base leading-5 text-bg-light ',
 											selected
-												? 'dark:bg-bd-dark dark:text-colors-dark-dark shadow bg-bg-light-bu text-colors-light-dark'
+												? 'max-md:w-[60%] dark:bg-bd-dark dark:text-colors-dark-dark shadow bg-bg-light-bu text-colors-light-dark'
 												: ' dark:hover:bg-bd-dark dark:hover:text-colors-dark-dark dark:bg-bd-dark/[0.42] dark:text-bg-dark-bu hover:bg-bg-light-bu bg-bg-light-bu/[0.7] text-colors-light-dark'
 										)
 									}

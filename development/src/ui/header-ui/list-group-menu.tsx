@@ -4,6 +4,9 @@ import { keyframes } from '@emotion/react'
 import cn from 'clsx'
 import { default as Link } from 'next/link'
 import { Fade } from 'react-awesome-reveal'
+import { useWindowSize } from '../../hooks/useResize'
+import InformationComponent from './information'
+import LangSwitch from './lang-switch'
 
 const ListGroupMenu: React.FC<{
 	navLink: string[]
@@ -33,14 +36,17 @@ const ListGroupMenu: React.FC<{
     transform: translate3d(0, 0, 0);
   }
 `
+
+	const { isScreenSm } = useWindowSize()
 	return (
-		<div
-			className={(cn('flex items-center justify-between w-auto '), classNames)}
-		>
-			<ul
-				className={cn('flex font-medium w-fit', classNamesLi && classNamesLi)}
-			>
-				<Fade cascade damping={0.1}>
+		<div className={(cn(' w-auto h-screen '), classNames)}>
+			<Fade cascade damping={0.1}>
+				<ul
+					className={cn(
+						'flex font-medium  w-fit',
+						classNamesLi && classNamesLi
+					)}
+				>
 					{navLink &&
 						navLink.map((link: string, i: number) => {
 							return (
@@ -68,8 +74,14 @@ const ListGroupMenu: React.FC<{
 								</li>
 							)
 						})}
-				</Fade>
-			</ul>
+				</ul>
+
+				{sideBar && !isScreenSm && (
+					<div className='flex flex-col items-center gap-5'>
+						<InformationComponent  /> <LangSwitch />
+					</div>
+				)}
+			</Fade>
 		</div>
 	)
 }

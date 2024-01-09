@@ -43,5 +43,8 @@ module.exports = {
 		extends: {}
 	},
 	darkMode: 'class',
-	plugins: [require('autoprefixer')]
+	plugins: [
+		require('autoprefixer'),
+		require('tailwind-scrollbar')({ nocompatible: true })
+	]
 }

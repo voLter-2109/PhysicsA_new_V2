@@ -4,6 +4,7 @@ import {
 	SCREEN_MD,
 	SCREEN_SM,
 	SCREEN_XL,
+	SCREEN_XS,
 	SCREEN_XXL
 } from '../constants/app.constant'
 
@@ -38,6 +39,7 @@ export function useWindowSize() {
 
 	return {
 		width: windowSize,
+		isScreenXS: windowSize.width >= SCREEN_XS,
 		isScreenSm: windowSize.width >= SCREEN_SM,
 		isScreenMd: windowSize.width >= SCREEN_MD,
 		isScreenLg: windowSize.width >= SCREEN_LG,

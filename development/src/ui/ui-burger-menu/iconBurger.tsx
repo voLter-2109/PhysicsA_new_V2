@@ -29,28 +29,32 @@ const Div = styled.div`
 	height: 3px;
 	margin: 6px 0;
 	transition: 0.4s;
+	pointer-events: none;
 `
 
 type Props = {
 	setIsShow: Dispatch<SetStateAction<boolean>>
 	open: boolean
+	
 }
 
 const IconBurger = ({ setIsShow, open }: Props) => {
 	return (
-		<SButton
-			className={cn(
-				open && 'change',
-				'[&>div]:bg-bg-black dark:[&>div]:bg-bg-dark-bu'
-			)}
-			onClick={() => {
-				setIsShow(prev => !prev)
-			}}
-		>
-			<Div className='bar1'></Div>
-			<Div className='bar2'></Div>
-			<Div className='bar3'></Div>
-		</SButton>
+		<>
+			<SButton
+				className={cn(
+					open && 'change',
+					'[&>div]:bg-bg-black dark:[&>div]:bg-bg-dark-bu z-10'
+				)}
+				onClick={() => {
+					setIsShow(prev => !prev)
+				}}
+			>
+				<Div className='bar1 '></Div>
+				<Div className='bar2'></Div>
+				<Div className='bar3'></Div>
+			</SButton>
+		</>
 	)
 }
 

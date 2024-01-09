@@ -45,7 +45,7 @@ const LocationSection = () => {
 							leaveFrom='opacity-100'
 							leaveTo='opacity-0'
 						>
-							<Heading className='text-lg'>
+							<Heading className='text-lg max-md:text-base'>
 								<strong>{LocationSection.bTabs[0].head?.site}</strong> <br />
 								{LocationSection.bTabs[0].head?.adress}
 							</Heading>

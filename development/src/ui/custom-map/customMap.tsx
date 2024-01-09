@@ -38,10 +38,11 @@ const CustomMap = ({ initialMap }: { initialMap: TMap }) => {
 		<div
 			ref={mapRef}
 			style={{
-				width: '100%',
-				height: '540px',
+				width: '90%',
+				height: '500px',
 				borderRadius: '10px',
-				overflow: 'hidden'
+				overflow: 'hidden',
+				margin: "0 auto"
 			}}
 		/>
 	)

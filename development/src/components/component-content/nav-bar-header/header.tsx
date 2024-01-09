@@ -16,8 +16,8 @@ type Props = {
 }
 
 const Header: FC<Props> = ({ activePage }) => {
-	const { width, isScreenXl } = useWindowSize()
-	const { isShow, setIsShow, ref } = useOutside(false)
+	const { width, isScreenXl, isScreenSm } = useWindowSize()
+	const { isShow, setIsShow, ref, refOutside } = useOutside(false)
 
 	const { NavBarText } = useContext(TextContext)
 
@@ -26,14 +26,11 @@ const Header: FC<Props> = ({ activePage }) => {
 	}, [width])
 
 	return (
-		<>
-			<div
-				ref={ref}
-				className='bg-bg-light dark:bg-bd-dark fixed w-full z-[41]'
-			>
+		<div ref={ref}>
+			<div className='bg-bg-light dark:bg-bd-dark fixed top-0 w-full z-[41]'>
 				<div className=' flex items-center justify-around mx-auto p-4 shadow-lg'>
 					{!isScreenXl && (
-						<div>
+						<div ref={refOutside}>
 							<IconBurger setIsShow={setIsShow} open={isShow} />
 						</div>
 					)}
@@ -50,8 +47,8 @@ const Header: FC<Props> = ({ activePage }) => {
 					)}
 
 					<div className='flex items-center gap-3'>
-						<InformationComponent />
-						<LangSwitch />
+						{isScreenSm && <InformationComponent />}
+						{isScreenSm && <LangSwitch />}
 						<ThemeSwitcher />
 					</div>
 				</div>
@@ -59,21 +56,23 @@ const Header: FC<Props> = ({ activePage }) => {
 
 			<div
 				className={cn(
-					'w-[300px] transition-all ease-in duration-300 bg-colors-light-light  ',
+					'w-[300px] transition-all ease-in duration-300 bg-colors-light-light',
 					'h-[100vh] z-10 fixed shadow-2xl top-0 dark:bg-bd-dark ',
 					isShow ? 'translate-x-[0]' : 'translate-x-[-350px]'
 				)}
 			>
-				<ListGroupMenu
-					isShow={isShow}
-					navLink={NavBarText}
-					activePage={activePage}
-					classNames='flex flex-col mt-[15vh] text-center w-fit [&>ul]:flex-col m-auto [&>ul]:text-2xl'
-					classNameP=''
-					sideBar={true}
-				/>
+				<div>
+					<ListGroupMenu
+						isShow={isShow}
+						navLink={NavBarText}
+						activePage={activePage}
+						classNames='flex flex-col h-screen justify-around text-center w-fit [&>ul]:flex-col m-auto [&>ul]:text-2xl'
+						classNameP=''
+						sideBar={true}
+					/>
+				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

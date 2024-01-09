@@ -12,7 +12,7 @@ const AboutUs: FC = () => {
 
 	return (
 		<>
-			<div className='min-h-[70vh] m-auto flex justify-center items-center dark:text-bg-light'>
+			<div className='m-auto flex justify-center items-center dark:text-bg-light'>
 				<div>
 					<Heading>{AboutUs.head}</Heading>
 					<div className='[&>p]:indent-4 [&>p]:mb-3 pb-5'>{content}</div>

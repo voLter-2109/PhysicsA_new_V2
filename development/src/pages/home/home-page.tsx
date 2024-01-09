@@ -128,7 +128,7 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 
 					<PageContainer
 						onChangeActivePage={onChangeActivePage}
-						className='min-h-[80vh]'
+						
 						id='5'
 					>
 						<ErrorBoundary fallback={<Error />}>
