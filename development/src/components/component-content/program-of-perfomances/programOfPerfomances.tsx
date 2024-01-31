@@ -37,9 +37,10 @@ const ProgramOfPerfomances: FC = () => {
 					<Tab.Panels>
 						{ProgramOfPerfomances.bTabs.map((tabBody, idx) => {
 							return (
-								<div className='overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-bg-light px-2 max-h-[60vh]'>
-
-								<Tab.Panel key={idx} className='shadow-lg '>
+								<div
+								key={idx}
+								 className='overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-bg-light px-2 max-h-[60vh]'>
+								<Tab.Panel  className='shadow-lg '>
 									<Transition
 										appear
 										show={tabIndex == idx}

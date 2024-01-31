@@ -5,7 +5,7 @@ const page: NextPage = async () => {
 	// const { landingPage } = await getDictionary('ru')
 	// console.log(landingPage)
 
-	return <div>1</div>
+	return <div>profile</div>
 }
 
 export default page
