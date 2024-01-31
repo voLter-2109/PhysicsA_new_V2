@@ -14,18 +14,6 @@ import Publications from '../../components/component-content/publications/public
 import Error from '../../components/error/error'
 import { TLandingPage } from '../../type/text-page-type'
 
-// import dynamic from 'next/dynamic'
-// import AboutUs from '../../components/component-content/about-us/aboutUs'
-// import HomeText from '../../components/component-content/home-paralax/homeText'
-// import Publications from '../../components/component-content/publications/publications'
-// import Error from '../../components/error/error'
-// import Footer from '../../components/footer/footer'
-// import Header from '../../components/nav-bar-header/header'
-
-// import AboutUsInfo from '../../components/component-content/about-us/aboutUsInfo'
-// import ProgramOfPerfomances from '../../components/component-content/program-of-perfomances/programOfPerfomances'
-// import SwiperComponent from '../../components/component-content/slider/slider'
-
 const DynamicLocationSection = dynamic(
 	() =>
 		import(
@@ -76,12 +64,6 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 		[]
 	)
 
-	// useWhyDidYouUpdate('useWhyDidYouUpdateComponent', {
-	// 	landingPage,
-	// 	activePage,
-	// 	onChangeActivePage,
-	// 	TextContext
-	// })
 
 	return (
 		<>

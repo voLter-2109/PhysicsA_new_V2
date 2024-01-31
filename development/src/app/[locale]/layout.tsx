@@ -1,6 +1,6 @@
 import cn from 'clsx'
 import { Metadata } from 'next'
-import { Bree_Serif, Mystery_Quest, Roboto_Mono } from 'next/font/google'
+import { Averia_Sans_Libre, Roboto_Mono } from 'next/font/google'
 import { FC, ReactNode } from 'react'
 import { getSiteUrl } from '../../config/url.config'
 import { SITE_NAME, localeConst } from '../../constants/app.constant'
@@ -15,14 +15,14 @@ const robotoMono = Roboto_Mono({
 	variable: '--font-roboto-mono'
 })
 
-const robotoMono2 = Bree_Serif({
+const robotoMono2 = Averia_Sans_Libre({
 	weight: '400',
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-bree-serif'
 })
 
-const robotoMono1 = Mystery_Quest({
+const robotoMono1 = Averia_Sans_Libre({
 	weight: '400',
 	subsets: ['latin'],
 	display: 'swap',

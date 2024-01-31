@@ -12,7 +12,7 @@ import { TextContext } from '../../../pages/home/home-page'
 import Heading from '../../../ui/heading/heading'
 import './style.scss'
 
-const arrFoto = [
+export const arrFoto = [
 	'https://physica.spb.ru/data/uploads/2023photos/20231023-IMG_0646.jpg',
 	'https://physica.spb.ru/data/uploads/2023photos/20231023-IMG_0647.jpg',
 	'https://physica.spb.ru/data/uploads/2023photos/20231023-IMG_0648.jpg',
@@ -138,5 +138,3 @@ export default function SwiperComponent() {
 		</div>
 	)
 }
-
-const SwiperButton = () => {}

@@ -3,33 +3,33 @@
 	"lang_map": "en_RU",
 	"landingPage": {
 		"NavBarText": [
-			"ENHomeru",
-			"ENabout usru",
-			"ENПрограммаru",
-			"ENФотоru",
-			"ENШколаru",
-			"ENОргВзносru",
-			"ENПубликацииru"
+			"Home",
+			"About us",
+			"Programm",
+			"Photos",
+			"Laser school",
+			"Fee",
+			"Publications"
 		],
 		"HomeText": {
 			"title": "PhysicsA",
-			"title_two": "Санкт-Петербург",
-			"subtitle": "ENМеждународная конференция",
-			"subtitle_two": "23-27 октября, 2023"
+			"title_two": "St.Petersburg",
+			"subtitle": "International Conference",
+			"subtitle_two": "23-27 october, 2023"
 		},
 		"AboutUs": {
-			"head": "ENО конференции",
+			"head": "About Conference",
 			"text": [
 				{
 					"type": "span",
 					"enter": true,
-					"text": "qwewerQWEWERМеждународная конференция ФизикА.СПб проводится в Санкт-Петербурге с середины 90-х. В последние годы Конференция собирает около 400 участников из различных регионов России, ближнего и дальнего зарубежья. В ней традиционно принимают участие ученые высших учебных заведений и научных организаций, а также студенты и аспиранты, ведущие исследования в различных областях физики и астрономии.",
+					"text": "The International Conference PhysicA.SPb has been held in St. Petersburg since the mid-90s. In recent years the Conference has brought together about 400 participants from different regions of the world. It is traditionally attended by scientists of higher educational institutions and scientific organizations, as well as students and postgraduates carrying out research in various fields of physics and astronomy.",
 					"style": ""
 				},
 				{
 					"type": "span",
 					"enter": false,
-					"text": "Основными целями Конференции является развитие регионального и международного научного сотрудничества, создание условий для обмена идеями и результатами исследований, систематизация актуальных проблем, выявление тенденций развития научных исследований, а также публикация работ, прошедших рецензирование, в международной научной печати. С 2012 до 2022 года расширенные тезисы докладов конференции ФизикА.СПб на английском языке издавались в журнале Journal of Physics: Conference Series (IOP Publishing). С 2023 года расширенные тезисы докладов конференции ФизикА.СПб в формате полноценных статей объемом до 6 страниц после прохождения стандартной процедуры рецензирования будут изданы в специальных выпусках журналов,",
+					"text": "The main purpose of the Conference is to develop regional and international scientific cooperation, to create conditions for the exchange of ideas and research results, to systematize pressing challenges, to identify trends in the development of scientific research, and to publish reviewed papers in the international science journal.The main purpose of the Conference is to develop regional and international scientific cooperation, to create conditions for the exchange of ideas and research results, to systematize pressing challenges, to identify trends in the development of scientific research, and to publish reviewed papers in the international science journal.",
 					"style": ""
 				},
 
@@ -37,31 +37,31 @@
 					"type": "link",
 					"typeHref": "text",
 					"hrefLink": "https://journals.ioffe.ru/",
-					"text": " издаваемых ФТИ им. А.Ф. Иоффе",
+					"text": " published by Ioffe Institute",
 					"enter": false,
 					"style": ""
 				},
 				{
 					"type": "span",
 					"enter": true,
-					"text": " :Журнал технической физики, Оптика и спектроскопия, Физика твердого тела, Физика и техника полупроводников, Письма в журнал технической физики. Переводы прошедших рецензирование статей будут опубликованы в англоязычных версиях журналов ФТИ: Teсhnical Physics, Optics and Spectroscopy, Physics of the Solid State, Semiconductors, Technical Physics Letters.",
+					"text": " : Journal of Technical Physics, Optics and Spectroscopy, Solid State Physics, Physics and Technology of Semiconductors, Letters to the Journal of Technical Physics. Translations of reviewed articles will be published in the English versions of FTI journals: Technical Physics, Optics and Spectroscopy, Physics of the Solid State, Semiconductors, Technical Physics Letters.",
 					"style": ""
 				},
 				{
 					"type": "span",
 					"enter": true,
-					"text": "Программный комитет Конференции уделяет большое внимание не только фундаментальной, но и прикладной значимости представляемых докладов, что позволяет объединять в рамках одной конференции весь спектр физических наук, включая астрофизику, физику плазмы, физику твердого тела, физику полупроводников и биофизику.",
+					"text": "The working languages of the PhysicsA.SPb Conference are Russian and English.",
 					"style": ""
 				}
 			]
 		},
 		"ProgramOfPerfomances": {
-			"head": "ENПрограмма",
-			"hTabs": ["23ru", "24ru", "25ru"],
+			"head": "Venue",
+			"hTabs": ["23", "24", "25"],
 			"bTabs": [
 				{
 					"head": "",
-					"thead": ["начало", "конец", "доклад"],
+					"thead": ["Start", "End", "Topic"],
 					"tbody": [
 						{
 							"type": "colSpan",
@@ -151,16 +151,16 @@
 				}
 			]
 		},
-		"SwiperComponent": { "head": "фото отчет" },
+		"SwiperComponent": { "head": "Archive" },
 		"LocationSection": {
-			"head": "ENПрограмма",
-			"hTabs": ["адрес", "секции"],
+			"head": "Infomation",
+			"hTabs": ["Adress", "Sections"],
 			"bTabs": [
 				{
 					"type": "map",
 					"head": {
-						"site": "Санкт-Петербург",
-						"adress": "гостиница «Спутник» пр. Тореза, 36,"
+						"site": "St.Petersuurg",
+						"adress": "Hotel «Sputnik» av. Toresa, 36,"
 					},
 					"map": {
 						"center": [60.006395, 30.365195],
@@ -174,13 +174,13 @@
 					"type": "list",
 					"listContent": [
 						{
-							"name": "Програм комитет",
+							"name": "Program Committee",
 							"list": [
 								[
 									{
 										"type": "span",
 										"enter": false,
-										"text": "Аверкиев Никита Сергеевич (ФТИ им. А. Ф. Иоффе) — председатель",
+										"text": "Averkiev Nikita Sergeevich (Ioffe Institute) — Chairman",
 										"style": ""
 									}
 								],
@@ -188,20 +188,20 @@
 									{
 										"type": "span",
 										"enter": false,
-										"text": "Соколовский Григорий Семенович (ФТИ им. А.Ф. Иоффе) — заместитель председателя",
+										"text": "Sokolovsky Grigory Semenovich (Ioffe Institute) - Deputy Chairman",
 										"style": ""
 									}
 								]
 							]
 						},
 						{
-							"name": "Организационный комитет",
+							"name": "Organizing Committee",
 							"list": [
 								[
 									{
 										"type": "span",
 										"enter": false,
-										"text": "Аверкиев Никита Сергеевич (ФТИ им. А. Ф. Иоффе) — председатель",
+										"text": "Sokolovsky Grigory Semenovich (Ioffe Institute) - Chairman",
 										"style": ""
 									}
 								],
@@ -209,20 +209,20 @@
 									{
 										"type": "span",
 										"enter": false,
-										"text": "Соколовский Григорий Семенович (ФТИ им. А.Ф. Иоффе) — заместитель председателя",
+										"text": "Azbel Alexander Yulievich (Ioffe Institute)",
 										"style": ""
 									}
 								]
 							]
 						},
 						{
-							"name": "Секции",
+							"name": "Sections",
 							"list": [
 								[
 									{
 										"type": "span",
 										"enter": false,
-										"text": "Аверкиев Никита Сергеевич (ФТИ им. А. Ф. Иоффе) — председатель",
+										"text": "Astronomy and Astrophysics",
 										"style": ""
 									}
 								],
@@ -230,7 +230,7 @@
 									{
 										"type": "span",
 										"enter": false,
-										"text": "Соколовский Григорий Семенович (ФТИ им. А.Ф. Иоффе) — заместитель председателя",
+										"text": "Atomic physics and elementary particle physics",
 										"style": ""
 									}
 								]
@@ -241,18 +241,18 @@
 			]
 		},
 		"OrganizationFree": {
-			"head": "ENОрганизационный взнос",
+			"head": "Registration fee",
 			"table": {
-				"head": "Стоимость участия:",
-				"thead": ["", "до 2 сентября", "до 18 октября", "после 18 октября"],
+				
+				"thead": ["", "before 2 september", "before 18 octobre", "after 18 octobre"],
 				"tbody": [
 					{
 						"type": "table",
-						"text": ["Размер оргвзноса", "10000", "13000", "15000"]
+						"text": ["Registration fee", "10000", "13000", "15000"]
 					},
 					{
 						"type": "table",
-						"text": ["Оплата банковской картой", "10500", "13650", "15750"]
+						"text": ["Credit card", "10500", "13650", "15750"]
 					}
 				]
 			},
@@ -261,7 +261,7 @@
 					{
 						"type": "span",
 						"enter": false,
-						"text": "Оплата организационного взноса за участие в конференции осуществляется по безналичному расчету через Общество с ограниченной ответственностью «Центр межрегионального инновационного развития» (ООО «ИННО-МИР»)",
+						"text": "Payment of the organizational fee for participation in the conference is made by bank transfer through the limited liability company 'Center for Interregional Innovative Development' (LLC 'INNO-MIR').",
 						"style": ""
 					}
 				],
@@ -269,7 +269,7 @@
 					{
 						"type": "span",
 						"enter": false,
-						"text": "Все платежи обрабатываются в течение 5 рабочих дней. То есть статус платежа в ЛК обновляется в течение 5 дней. Не присылайте нам квитанции о платежах. Оргкомитет их проверить не может. Пожалуйста, задавайте вопросы о ваших платежах компании",
+						"text": "All payments are processed within 5 working days - the payment status in your personal cabinet is updated within 5 days. There is no need to send payment receipts - the organizing committee cannot check them. Please ask questions about your payments to the company ",
 						"style": ""
 					},
 					{
@@ -285,7 +285,7 @@
 					{
 						"type": "strong",
 						"enter": false,
-						"text": "По всем вопросам, возникшим с заполнением документов, оплатой организационного взноса и другими финансовыми вопросами, пожалуйста, обращайтесь к Землянской Ирине по электронной почте",
+						"text": "If you have any questions about submitting documents, paying the organizational fee and other financial issues, please contact Zemlyanskaya Irina by e-mail ",
 						"style": ""
 					},
 					{
@@ -299,30 +299,30 @@
 					{
 						"type": "strong",
 						"enter": false,
-						"text": ", или по телефону",
+						"text": ", or by tel ",
 						"style": ""
 					},
 					{
 						"type": "link",
 						"typeHref": "tel",
 						"hrefLink": "+7 (911) 840-53-48",
-						"text": "+7 (911) 840-53-48",
+						"text": "+7 (911) 840-53-48 ",
 						"enter": false,
 						"style": ""
 					},
 					{
 						"type": "strong",
 						"enter": false,
-						"text": "(с 12.00 до 17.00 – время Московское)",
+						"text": "(from 12.00 to 17.00 MSK)",
 						"style": ""
 					}
 				]
 			],
 
 			"hTabs": [
-				"По договору с юридическим лицом",
-				"Банковским переводом физическим лицом",
-				"Для оплаты банковской картой"
+				"For legal entity",
+				"Bank transfer in person",
+				"Credit card"
 			],
 			"bTabs": [
 				[
