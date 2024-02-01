@@ -13,6 +13,7 @@ import Header from '../../components/component-content/nav-bar-header/header'
 import Publications from '../../components/component-content/publications/publications'
 import Error from '../../components/error/error'
 import { TLandingPage } from '../../type/text-page-type'
+import Loading from '[locale]/loading'
 
 const DynamicLocationSection = dynamic(
 	() =>
@@ -64,6 +65,7 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 		[]
 	)
 
+	if (!landingPage) return <Loading />
 
 	return (
 		<>
@@ -108,11 +110,7 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 						</ErrorBoundary>
 					</PageContainer>
 
-					<PageContainer
-						onChangeActivePage={onChangeActivePage}
-						
-						id='5'
-					>
+					<PageContainer onChangeActivePage={onChangeActivePage} id='5'>
 						<ErrorBoundary fallback={<Error />}>
 							<YMaps
 								query={{

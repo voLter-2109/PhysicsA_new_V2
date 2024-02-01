@@ -2,6 +2,5 @@
 
 # dependencies
 /node_modules
-
-# next.js
 /.next/
+/build/
