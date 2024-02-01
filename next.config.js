@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	distDir: 'build',
+	// distDir: 'build',
 	env: {
 		SERVER_URL: 'http://localhost:4200/api',
 		APP_URL: 'http://localhost:3000',
