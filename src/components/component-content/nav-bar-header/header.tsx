@@ -27,14 +27,17 @@ const Header: FC<Props> = ({ activePage }) => {
 
 	return (
 		<div ref={ref}>
-			<div className='bg-bg-light dark:bg-bd-dark fixed top-0 w-full z-[41]'>
-				<div className=' flex items-center justify-around mx-auto p-4 shadow-lg'>
+			<div className='fixed top-0 w-full z-[41] backdrop-blur-md'>
+				<div className=' flex items-center justify-around mx-auto p-4 border-b-2 border-bg-light/5'>
 					{!isScreenXl && (
 						<div ref={refOutside}>
 							<IconBurger setIsShow={setIsShow} open={isShow} />
 						</div>
 					)}
-					<span className='transition-all .3s cursor-pointer self-center text-2xl font-semibold text-colors-light-dark dark:text-bg-dark-bu dark:hover:text-colors-dark-dark'>
+					<span
+						className=' cursor-pointer self-center text-2xl font-semibold
+					 text-colors-light-dark dark:text-colors-light-light'
+					>
 						Physics.SPB
 					</span>
 					{isScreenXl && (
@@ -66,7 +69,8 @@ const Header: FC<Props> = ({ activePage }) => {
 						isShow={isShow}
 						navLink={NavBarText}
 						activePage={activePage}
-						classNames='flex flex-col h-screen justify-around text-center w-fit [&>ul]:flex-col m-auto [&>ul]:text-2xl'
+						classNames='flex flex-col h-screen justify-around text-center w-fit [&>ul]:flex-col
+						 m-auto [&>ul]:text-2xl'
 						classNameP=''
 						sideBar={true}
 					/>

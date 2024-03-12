@@ -54,11 +54,12 @@ const ListGroupMenu: React.FC<{
 									<Link
 										href={`/#${i + 1}`}
 										className={cn(
-											'block mr-4 relative hover:text-bg-light-bu dark:hover:text-colors-dark-dark ',
+											'block mr-4 relative hover:text-bg-light-bu',
+											' dark:hover:text-colors-dark-dark ',
 											'flex flex-row items-baseline justify-center transition-all 0.3s',
 											activePage === +(i + 1)
-												? 'text-bg-light-bu dark:text-colors-dark-dark'
-												: 'text-colors-light-dark dark:text-bg-dark-bu'
+												? /*'text-bg-light-bu dark:text-colors-dark-dark'*/ ''
+												: 'text-colors-light-dark dark:text-bg-light'
 										)}
 										aria-current='page'
 									>
@@ -78,7 +79,7 @@ const ListGroupMenu: React.FC<{
 
 				{sideBar && !isScreenSm && (
 					<div className='flex flex-col items-center gap-5'>
-						<InformationComponent  /> <LangSwitch />
+						<InformationComponent /> <LangSwitch />
 					</div>
 				)}
 			</Fade>

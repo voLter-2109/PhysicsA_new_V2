@@ -5,6 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import PageContainer from '../../ui/page-container/page-container'
 
 import { YMaps } from '@pbe/react-yandex-maps'
+import Loading from '[locale]/loading'
 import dynamic from 'next/dynamic'
 import AboutUs from '../../components/component-content/about-us/aboutUs'
 import Footer from '../../components/component-content/footer/footer'
@@ -13,7 +14,6 @@ import Header from '../../components/component-content/nav-bar-header/header'
 import Publications from '../../components/component-content/publications/publications'
 import Error from '../../components/error/error'
 import { TLandingPage } from '../../type/text-page-type'
-import Loading from '[locale]/loading'
 
 const DynamicLocationSection = dynamic(
 	() =>
@@ -70,20 +70,14 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 	return (
 		<>
 			<TextContext.Provider value={landingPage}>
-				<div className='flex flex-col'>
+				<div className='flex flex-col overflow-hidden'>
 					<Header activePage={activePage} />
 					{/* //!база и компоненты готовы */}
 					<PageContainer
 						onChangeActivePage={onChangeActivePage}
 						id='1'
+						// dark:bg-[url('/bg-par-black.jpg')] bg-[url('/bg-par-light.jpg')]
 						container={false}
-						className="h-[100vh] flex  relative shadow-2xl justify-end dark:bg-bd-dark  dark:bg-[url('/bg-par-black.jpg')] bg-[url('/bg-par-light.jpg')]"
-						style={{
-							backgroundAttachment: 'fixed',
-							backgroundPosition: 'center',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover'
-						}}
 					>
 						{/* //!база и компоненты готовы */}
 						<ErrorBoundary fallback={<Error />}>
@@ -94,19 +88,6 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 					<PageContainer onChangeActivePage={onChangeActivePage} id='2'>
 						<ErrorBoundary fallback={<Error />}>
 							<AboutUs />
-						</ErrorBoundary>
-					</PageContainer>
-					{/* //!база и компоненты готовы */}
-					<PageContainer onChangeActivePage={onChangeActivePage} id='3'>
-						<ErrorBoundary fallback={<Error />}>
-							<DynamicProgramOfPerfomances />
-						</ErrorBoundary>
-					</PageContainer>
-
-					{/* //!база и компоненты готовы */}
-					<PageContainer onChangeActivePage={onChangeActivePage} id='4'>
-						<ErrorBoundary fallback={<Error />}>
-							<DynamicSwiperComponent />
 						</ErrorBoundary>
 					</PageContainer>
 
@@ -121,6 +102,20 @@ const HomePage: FC<Props> = ({ landingPage }) => {
 							>
 								<DynamicLocationSection />
 							</YMaps>
+						</ErrorBoundary>
+					</PageContainer>
+
+					{/* //!база и компоненты готовы */}
+					<PageContainer onChangeActivePage={onChangeActivePage} id='3'>
+						<ErrorBoundary fallback={<Error />}>
+							<DynamicProgramOfPerfomances />
+						</ErrorBoundary>
+					</PageContainer>
+
+					{/* //!база и компоненты готовы */}
+					<PageContainer onChangeActivePage={onChangeActivePage} id='4'>
+						<ErrorBoundary fallback={<Error />}>
+							<DynamicSwiperComponent />
 						</ErrorBoundary>
 					</PageContainer>
 

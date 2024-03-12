@@ -13,8 +13,8 @@
 		],
 		"HomeText": {
 			"title": "PhysicsA",
-			"title_two": "St.Petersburg",
-			"subtitle": "International Conference",
+			"title_two": "",
+			"subtitle": "Hotel «Sputnik» av. Toresa, 36, St.Petersburg",
 			"subtitle_two": "23-27 october, 2023"
 		},
 		"AboutUs": {
@@ -243,8 +243,12 @@
 		"OrganizationFree": {
 			"head": "Registration fee",
 			"table": {
-				
-				"thead": ["", "before 2 september", "before 18 octobre", "after 18 octobre"],
+				"thead": [
+					"",
+					"before 2 september",
+					"before 18 octobre",
+					"after 18 octobre"
+				],
 				"tbody": [
 					{
 						"type": "table",
@@ -319,11 +323,7 @@
 				]
 			],
 
-			"hTabs": [
-				"For legal entity",
-				"Bank transfer in person",
-				"Credit card"
-			],
+			"hTabs": ["For legal entity", "Bank transfer in person", "Credit card"],
 			"bTabs": [
 				[
 					{

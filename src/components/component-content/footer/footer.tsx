@@ -7,7 +7,7 @@ const Footer = () => {
 		 dark:bg-bd-dark flex  items-center justify-around'
 		>
 			<span
-				className='transition-all .3s cursor-pointer self-center text-lg font-semibold
+				className='transition-all cursor-pointer self-center text-lg font-semibold
 			 text-colors-light-dark dark:text-bg-dark-bu dark:hover:text-colors-dark-dark'
 			>
 				Physics.SPB

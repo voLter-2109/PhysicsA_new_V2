@@ -38,15 +38,74 @@
 	opacity: 0.4;
 }
 
-
 .mySwiper .swiper-slide-thumb-active {
 	opacity: 1;
 }
 
 .swiper-slide img {
 	display: block;
-	width: 100%;
+	width: 200%;
 	height: 100%;
 	object-fit: cover;
 	border-radius: 4px;
+}
+
+.custom-shape-divider {
+	position: relative;
+	width: 200%;
+	height: 75px;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.custom-shape-divider svg {
+	position: absolute;
+	display: block;
+	top: 0;
+	width: calc(100% + 1.3px);
+	height: 75px;
+	transition: all 0.3s ease-in-out;
+}
+
+.custom-shape-divider-top>.Layer_1 {
+	left: 0%;
+	animation: move_right 30s infinite ease-in-out;
+}
+
+.custom-shape-divider-top>.Layer_2 {
+	left: 0%;
+	animation: move_left 25s infinite ease-in-out;
+}
+
+@keyframes move_right {
+	0% {
+		right: 0%;
+	}
+	50% {
+		right: 50%;
+	}
+	100% {
+		right: 0;
+	}
+}
+@keyframes move_left {
+	0% {
+		left: 0%;
+	}
+	50% {
+		left: -50%;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+.custom-shape-divider-top .shape-fill_1 {
+	fill: #6363630c;
+}
+.custom-shape-divider-top .shape-fill_2 {
+	fill: #5a5a5a0c;
+}
+.custom-shape-divider-top .shape-fill_3 {
+	fill: #4949490d;
 }
