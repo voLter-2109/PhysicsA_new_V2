@@ -10,4 +10,4 @@
 </ul>
 
 
-![example page](https://github.com/voLter-2109/PhysicsA_new_V2/frontend.jpg)
+![https://github.com/voLter-2109/PhysicsA_new_V2/frontend.jpg](https://github.com/voLter-2109/PhysicsA_new_V2/blob/main/frontend.jpg)
